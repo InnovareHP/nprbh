@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const quickLinks = [
@@ -23,13 +24,12 @@ export default function Footer() {
           {/* Brand */}
           <div className="flex flex-col gap-5 sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3">
-              <span className="rounded-md bg-accent px-2.5 py-[7px] text-xs font-extrabold tracking-wide text-white">
-                NBPHS
-              </span>
-              <span className="text-[0.6875rem] font-semibold leading-tight text-on-dark">
-                National Behavioral &<br />
-                Psychiatric Health System
-              </span>
+              <Image
+                src="/logo.png"
+                alt="NBPHS Logo"
+                width={150}
+                height={150}
+              />
             </div>
             <p className="max-w-xs text-[0.9375rem] leading-relaxed text-on-dark-muted">
               Developing and operating behavioral health facilities that deliver

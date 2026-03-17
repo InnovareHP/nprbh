@@ -6,7 +6,9 @@
       "Bash(cd \"C:/Users/lhani/OneDrive/Desktop/ivorzero/ivorzero/nprbh\" && pnpm lint 2>&1)",
       "Bash(cd \"C:/Users/lhani/OneDrive/Desktop/ivorzero/ivorzero/nprbh\" && pnpm add tailwindcss @tailwindcss/postcss 2>&1)",
       "Bash(cd \"C:/Users/lhani/OneDrive/Desktop/ivorzero/ivorzero/nprbh\" && pnpm lint 2>&1 | head -40)",
-      "Bash(cd \"C:/Users/lhani/OneDrive/Desktop/ivorzero/ivorzero/nprbh\" && npx @biomejs/biome check --write 2>&1)"
+      "Bash(cd \"C:/Users/lhani/OneDrive/Desktop/ivorzero/ivorzero/nprbh\" && npx @biomejs/biome check --write 2>&1)",
+      "Bash(pnpm build:*)",
+      "Bash(pnpm add:*)"
     ]
   }
 }

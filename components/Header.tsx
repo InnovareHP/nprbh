@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -7,9 +8,8 @@ import { useState } from "react";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
+  { href: "/facilities", label: "Facilities" },
   { href: "/services", label: "Services" },
-  { href: "/gallery", label: "Gallery" },
-  { href: "/contact", label: "Contact" },
 ];
 
 export default function Header() {
@@ -22,16 +22,10 @@ export default function Header() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-3"
+          className="flex items-center gap-3 z-50"
           aria-label="NBPHS Home"
         >
-          <span className="rounded-md bg-primary px-3 py-2 text-[0.8125rem] font-extrabold tracking-wide text-white">
-            NBPHS
-          </span>
-          <span className="hidden text-[0.6875rem] font-semibold leading-tight text-primary md:block">
-            National Behavioral &<br />
-            Psychiatric Health System
-          </span>
+          <Image src="/logo.png" alt="NBPHS Logo" width={100} height={100} />
         </Link>
 
         {/* Desktop Nav */}

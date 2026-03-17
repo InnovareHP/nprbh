@@ -1,6 +1,6 @@
+import Hero from "@/components/Hero";
 import type { Metadata } from "next";
 import Link from "next/link";
-import Hero from "@/components/Hero";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -11,7 +11,6 @@ export const metadata: Metadata = {
 const services = [
   {
     id: "development",
-    icon: "🏗",
     title: "Behavioral Health Facility Development",
     subtitle: "Purpose-Built Facilities from Concept to Completion",
     description:
@@ -27,7 +26,6 @@ const services = [
   },
   {
     id: "operations",
-    icon: "⚙",
     title: "Behavioral Health Facility Operations",
     subtitle: "Clinical Quality Meets Operational Excellence",
     description:
@@ -43,7 +41,6 @@ const services = [
   },
   {
     id: "senior",
-    icon: "🤝",
     title: "Senior Behavioral Healthcare Solutions",
     subtitle: "Specialized Care for Older Adults",
     description:
@@ -65,6 +62,7 @@ export default function ServicesPage() {
       <Hero
         size="small"
         align="center"
+        image="/hero-services.jpeg"
         label="Our Services"
         title="What We Do"
         subtitle="End-to-end behavioral health solutions — from facility development through clinical operations."
@@ -75,12 +73,13 @@ export default function ServicesPage() {
         <section
           key={service.id}
           id={service.id}
-          className={`py-16 md:py-24 ${index % 2 === 1 ? "bg-bg-secondary" : ""}`}
+          className={`py-16 md:py-24 ${
+            index % 2 === 1 ? "bg-bg-secondary" : ""
+          }`}
         >
           <div className="mx-auto max-w-[1200px] px-6">
             <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
               <div className="flex flex-col gap-4">
-                <span className="text-[2.5rem]">{service.icon}</span>
                 <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-bold leading-[1.2] tracking-tight text-primary">
                   {service.title}
                 </h2>
