@@ -11,7 +11,7 @@ export default function Home() {
         align="left"
         image="/home-hero.jpg"
         imageAlt="A calm, professional healthcare environment representing behavioral health care."
-        overlayClassName="bg-black/45"
+        overlayClassName="bg-black/60"
         showStats
         title="Expanding Access to Specialized Behavioral Health Care"
         subtitle="National Behavioral & Psychiatric Health System develops and operates behavioral health facilities dedicated to providing specialized psychiatric care for adults and seniors. The standard we hold ourselves to is simple: the care we provide should reflect the care we would want for our own families."

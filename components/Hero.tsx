@@ -81,6 +81,7 @@ export default function Hero({
   showStats = false,
 }: HeroProps) {
   const isCenter = align === "center";
+  const isFullHero = size === "full";
 
   const containerVariants = {
     hidden: {},
@@ -136,7 +137,7 @@ export default function Hero({
           )}
           <motion.h1
             variants={itemVariants}
-            className={`mb-6 max-w-[800px] font-bold leading-[1.1] tracking-tight text-white ${
+            className={`mb-6 max-w-[800px] font-bold leading-[1.1] tracking-tight text-white drop-shadow-sm ${
               size === "small"
                 ? "text-[clamp(1.75rem,4vw,2.75rem)]"
                 : "text-[clamp(2.25rem,5.5vw,4rem)]"
@@ -147,7 +148,9 @@ export default function Hero({
           {subtitle && (
             <motion.p
               variants={itemVariants}
-              className="mb-2 max-w-[560px] text-[clamp(1rem,2vw,1.25rem)] leading-relaxed text-on-dark-muted"
+              className={`mb-2 max-w-[560px] text-[clamp(1rem,2vw,1.25rem)] leading-relaxed drop-shadow-sm ${
+                isFullHero ? "text-white/95" : "text-on-dark-muted"
+              }`}
             >
               {subtitle}
             </motion.p>
