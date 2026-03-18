@@ -164,9 +164,7 @@ export default function AboutPage() {
                   key={item}
                   className="flex items-start gap-3 text-[1.0625rem] leading-relaxed text-text-secondary"
                 >
-                  <span className="mt-px shrink-0 font-bold text-accent">
-                    ✓
-                  </span>
+                  <span className="mt-[0.5em] h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                   {item}
                 </li>
               ))}
@@ -303,9 +301,7 @@ export default function AboutPage() {
                   key={service}
                   className="flex items-start gap-3 text-[1.0625rem] leading-relaxed text-text-secondary"
                 >
-                  <span className="mt-px shrink-0 font-bold text-accent">
-                    ✓
-                  </span>
+                  <span className="mt-[0.5em] h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                   {service}
                 </li>
               ))}

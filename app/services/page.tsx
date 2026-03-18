@@ -100,9 +100,7 @@ export default function ServicesPage() {
                       key={feature}
                       className="flex items-start gap-3 text-[0.9375rem] leading-snug text-text-secondary"
                     >
-                      <span className="mt-px shrink-0 font-bold text-accent">
-                        ✓
-                      </span>
+                      <span className="mt-[0.5em] h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                       {feature}
                     </li>
                   ))}
