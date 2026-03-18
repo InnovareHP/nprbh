@@ -20,7 +20,8 @@ const sizeClasses = {
   full: "min-h-[520px] pt-24 pb-16 sm:min-h-[620px] sm:pt-28 sm:pb-20 lg:h-[60vh] lg:min-h-0 lg:pt-32 lg:pb-24",
   medium:
     "min-h-[460px] pt-24 pb-16 sm:min-h-[520px] sm:pt-28 sm:pb-20 md:min-h-[500px] md:pt-32 md:pb-20",
-  small: "min-h-[300px] pt-20 pb-12 sm:min-h-[340px] sm:pt-24 sm:pb-14 md:min-h-[320px]",
+  small:
+    "min-h-[300px] pt-20 pb-12 sm:min-h-[340px] sm:pt-24 sm:pb-14 md:min-h-[320px]",
 };
 
 const stats = [
@@ -35,7 +36,10 @@ const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
 function CountUpNumber({
   target,
   delay = 0,
-}: { target: number; delay?: number }) {
+}: {
+  target: number;
+  delay?: number;
+}) {
   const [count, setCount] = useState(0);
   const [started, setStarted] = useState(false);
 
@@ -94,7 +98,7 @@ export default function Hero({
 
   return (
     <div className="relative">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_80%,rgba(13,115,119,0.15)_0%,transparent_60%),radial-gradient(ellipse_at_80%_20%,rgba(196,154,108,0.1)_0%,transparent_50%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_80%,rgba(137, 168, 235, 0.15)_0%,transparent_60%),radial-gradient(ellipse_at_80%_20%,rgba(196,154,108,0.1)_0%,transparent_50%)]" />
 
       <div className="absolute inset-0 -z-10">
         <Image
@@ -105,7 +109,7 @@ export default function Hero({
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/10" />
       </div>
       <section
         className={`relative flex items-center overflow-hidden ${sizeClasses[size]}`}
@@ -123,7 +127,7 @@ export default function Hero({
           {label && (
             <motion.span
               variants={itemVariants}
-              className="mb-6 inline-block text-xs font-semibold uppercase tracking-[0.2em] text-gold-light"
+              className="mb-6 inline-block text-xs font-semibold uppercase tracking-[0.2em] text-white"
             >
               {label}
             </motion.span>
