@@ -62,7 +62,8 @@ export default function ServicesPage() {
       <Hero
         size="small"
         align="center"
-        image="/hero-services.jpeg"
+        image="/hero-service.jpg"
+        imageAlt="A care team supporting a patient in a clinical environment."
         label="Our Services"
         title="What We Do"
         subtitle="End-to-end behavioral health solutions — from facility development through clinical operations."
@@ -77,7 +78,7 @@ export default function ServicesPage() {
             index % 2 === 1 ? "bg-bg-secondary" : ""
           }`}
         >
-          <div className="mx-auto max-w-[1200px] px-6">
+          <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
             <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
               <div className="flex flex-col gap-4">
                 <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-bold leading-[1.2] tracking-tight text-primary">
@@ -113,7 +114,7 @@ export default function ServicesPage() {
 
       {/* CTA */}
       <section className="bg-linear-to-br from-primary to-primary-light py-16 md:py-24">
-        <div className="mx-auto max-w-[1200px] px-6">
+        <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
           <div className="flex flex-col items-center text-center">
             <h2 className="text-[clamp(1.75rem,4vw,2.5rem)] font-bold tracking-tight text-white">
               Let&apos;s Build Something Meaningful

@@ -12,13 +12,15 @@ interface HeroProps {
   size?: "full" | "medium" | "small";
   align?: "left" | "center";
   image?: string;
+  imageAlt?: string;
   showStats?: boolean;
 }
 
 const sizeClasses = {
-  full: "h-[60vh]",
-  medium: "min-h-[500px] pt-36 pb-24 md:pt-32 md:pb-20",
-  small: "min-h-[340px] pt-28 pb-16 md:min-h-[280px] md:pt-24 md:pb-14",
+  full: "min-h-[520px] pt-24 pb-16 sm:min-h-[620px] sm:pt-28 sm:pb-20 lg:h-[60vh] lg:min-h-0 lg:pt-32 lg:pb-24",
+  medium:
+    "min-h-[460px] pt-24 pb-16 sm:min-h-[520px] sm:pt-28 sm:pb-20 md:min-h-[500px] md:pt-32 md:pb-20",
+  small: "min-h-[300px] pt-20 pb-12 sm:min-h-[340px] sm:pt-24 sm:pb-14 md:min-h-[320px]",
 };
 
 const stats = [
@@ -68,7 +70,8 @@ export default function Hero({
   children,
   size = "medium",
   align = "center",
-  image = "/bg.jpeg",
+  image = "/hero-home.jpeg",
+  imageAlt = "",
   showStats = false,
 }: HeroProps) {
   const isCenter = align === "center";
@@ -96,10 +99,11 @@ export default function Hero({
       <div className="absolute inset-0 -z-10">
         <Image
           src={image}
-          alt="Header background"
+          alt={imageAlt}
           fill
           priority
           className="object-cover"
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-black/40" />
       </div>
@@ -110,7 +114,7 @@ export default function Hero({
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className={`relative w-full px-6 ${
+          className={`relative w-full px-[5vw] sm:px-6 ${
             isCenter
               ? "mx-auto flex max-w-[1200px] flex-col items-center text-center"
               : "mx-auto max-w-[800px] lg:ml-[max(24px,calc((100%-1200px)/2+24px))]"
@@ -157,7 +161,7 @@ export default function Hero({
 
       {showStats && (
         <section className="border-b-[3px] border-accent">
-          <div className="mx-auto grid max-w-[1200px] grid-cols-2 gap-6 px-6 py-8 md:grid-cols-4 md:gap-8 md:py-10">
+          <div className="mx-auto grid max-w-[1200px] grid-cols-2 gap-6 px-[5vw] py-8 sm:px-6 md:grid-cols-4 md:gap-8 md:py-10">
             {stats.map((stat, i) => {
               const numericValue = Number.parseInt(stat.value, 10);
               const isNumber = !Number.isNaN(numericValue);

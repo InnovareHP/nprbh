@@ -29,6 +29,8 @@ export default function GalleryPage() {
       <Hero
         size="small"
         align="center"
+        image="/hero-home.jpeg"
+        imageAlt="A modern healthcare facility entrance."
         label="Our Portfolio"
         title="Facility Gallery"
         subtitle="Purpose-built behavioral health environments designed for healing, dignity, and clinical excellence."
@@ -36,14 +38,14 @@ export default function GalleryPage() {
 
       {/* Gallery Grid */}
       <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-[1200px] px-6">
+        <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {placeholders.map((item) => (
               <div
                 key={item.id}
                 className="overflow-hidden rounded-xl border border-border-light bg-white transition-all hover:-translate-y-0.5 hover:border-border hover:shadow-lg"
               >
-                <div className="flex aspect-[4/3] items-center justify-center bg-linear-to-br from-bg-secondary to-[#e8edf3]">
+                <div className="flex aspect-4/3 items-center justify-center bg-linear-to-br from-bg-secondary to-[#e8edf3]">
                   <div className="flex flex-col items-center gap-2.5">
                     <span className="text-[1.75rem] opacity-50">📷</span>
                     <span className="px-4 text-center text-xs text-text-light">
@@ -75,7 +77,7 @@ export default function GalleryPage() {
 
       {/* CTA */}
       <section className="bg-bg-dark py-16 text-on-dark md:py-24">
-        <div className="mx-auto max-w-[1200px] px-6">
+        <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
           <div className="flex flex-col items-center text-center">
             <h2 className="text-[clamp(1.75rem,4vw,2.5rem)] font-bold tracking-tight text-white">
               Interested in Our Facilities?

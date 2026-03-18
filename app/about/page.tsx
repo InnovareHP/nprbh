@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import Hero from "@/components/Hero";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About",
@@ -71,14 +71,15 @@ export default function AboutPage() {
       <Hero
         size="small"
         align="center"
-        image="/hero-about.jpeg"
+        image="/hero-about.jpg"
+        imageAlt="Healthcare professionals collaborating in a clinical setting."
         label="About NBPHS"
         title="National Behavioral & Psychiatric Health System"
       />
 
       {/* Main Description */}
       <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-[1200px] px-6">
+        <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
           <div className="mx-auto max-w-[800px] flex flex-col gap-5">
             <p className="text-[1.0625rem] leading-relaxed text-text-secondary">
               National Behavioral &amp; Psychiatric Health System (NBPHS)
@@ -112,7 +113,7 @@ export default function AboutPage() {
 
       {/* Why It Matters */}
       <section className="bg-bg-secondary py-16 md:py-24">
-        <div className="mx-auto max-w-[1200px] px-6">
+        <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
           <div className="mx-auto max-w-[800px] flex flex-col gap-5">
             <span className="inline-block text-xs font-semibold uppercase tracking-[0.15em] text-accent">
               Why It Matters
@@ -142,7 +143,7 @@ export default function AboutPage() {
 
       {/* Our Approach */}
       <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-[1200px] px-6">
+        <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
           <div className="mx-auto max-w-[800px] flex flex-col gap-5">
             <span className="inline-block text-xs font-semibold uppercase tracking-[0.15em] text-accent">
               Our Approach
@@ -179,7 +180,7 @@ export default function AboutPage() {
 
       {/* Our Commitment */}
       <section className="bg-bg-secondary py-16 md:py-24">
-        <div className="mx-auto max-w-[1200px] px-6">
+        <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
           <div className="mx-auto max-w-[800px] flex flex-col gap-5">
             <span className="inline-block text-xs font-semibold uppercase tracking-[0.15em] text-accent">
               Our Commitment
@@ -210,7 +211,7 @@ export default function AboutPage() {
 
       {/* Principles */}
       <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-[1200px] px-6">
+        <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
           <div className="mb-14 flex flex-col items-center text-center">
             <span className="inline-block text-xs font-semibold uppercase tracking-[0.15em] text-accent">
               Principles
@@ -239,7 +240,7 @@ export default function AboutPage() {
 
       {/* Leadership */}
       <section className="bg-bg-secondary py-16 md:py-24" id="leadership">
-        <div className="mx-auto max-w-[1200px] px-6">
+        <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
           <div className="mb-6 flex flex-col items-center text-center">
             <span className="inline-block text-xs font-semibold uppercase tracking-[0.15em] text-accent">
               Leadership
@@ -283,7 +284,7 @@ export default function AboutPage() {
 
       {/* Operational Platform */}
       <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-[1200px] px-6">
+        <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
           <div className="mx-auto max-w-[800px] flex flex-col gap-5">
             <span className="inline-block text-xs font-semibold uppercase tracking-[0.15em] text-accent">
               Operational Platform
