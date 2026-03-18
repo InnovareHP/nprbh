@@ -16,13 +16,14 @@ export default function ContactPage() {
         size="small"
         align="center"
         image="/hero-contact.jpeg"
+        imageAlt="A healthcare office environment with team support."
         label="Contact"
         title="Contact Us"
         subtitle="National Behavioral & Psychiatric Health System welcomes inquiries from physicians, healthcare partners, and community organizations interested in learning more about our facilities and development initiatives."
       />
 
       <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-[1200px] px-6">
+        <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
           <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
             {/* Contact Info */}
             <div className="flex flex-col gap-8">

@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import Hero from "@/components/Hero";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Facilities",
@@ -46,7 +46,8 @@ export default function FacilitiesPage() {
       <Hero
         size="small"
         align="center"
-        image="/hero-facilities.jpeg"
+        image="/hero-facilities.jpg"
+        imageAlt="Exterior view of a modern behavioral health facility."
         label="Our Facilities"
         title="Our Behavioral Health Facilities"
         subtitle="National Behavioral & Psychiatric Health System develops and operates behavioral health facilities dedicated to expanding access to specialized psychiatric care in the communities we serve."
@@ -54,7 +55,7 @@ export default function FacilitiesPage() {
 
       {/* Facilities Grid */}
       <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-[1200px] px-6">
+        <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
           <p className="mx-auto mb-14 max-w-[700px] text-center text-[1.0625rem] leading-relaxed text-text-secondary">
             Below are the facilities currently operating or in development
             within the NBPHS network.
@@ -65,7 +66,7 @@ export default function FacilitiesPage() {
                 key={facility.name}
                 className="flex flex-col overflow-hidden rounded-2xl border border-border-light bg-white shadow-sm transition-all hover:-translate-y-0.5 hover:border-border hover:shadow-lg"
               >
-                <div className="flex aspect-[16/10] items-center justify-center bg-linear-to-br from-bg-secondary to-[#e8edf3]">
+                <div className="flex aspect-16/10 items-center justify-center bg-linear-to-br from-bg-secondary to-[#e8edf3]">
                   <div className="flex flex-col items-center gap-2.5">
                     <span className="text-[2rem] opacity-50">🏥</span>
                     <span className="px-4 text-center text-xs text-text-light">

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -16,36 +16,48 @@ export default function Header() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
+
   return (
     <header className="sticky top-0 z-50 h-20 border-b border-border-light bg-white/97 backdrop-blur-sm">
-      <div className="mx-auto flex h-full max-w-[1200px] items-center justify-between px-6">
+      <div className="mx-auto flex h-full max-w-[1200px] items-center justify-between px-4 sm:px-6">
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-3 z-50"
+          className="z-50 flex shrink-0 items-center gap-3"
           aria-label="NBPHS Home"
         >
-          <Image src="/logo.png" alt="NBPHS Logo" width={100} height={100} />
+          <Image
+            src="/logo.png"
+            alt="NBPHS Logo"
+            width={100}
+            height={100}
+          />
         </Link>
 
         {/* Desktop Nav */}
         <nav
           className={`${
             mobileOpen
-              ? "fixed inset-x-0 top-20 bottom-0 flex translate-x-0 flex-col bg-white px-6 py-4"
-              : "fixed inset-x-0 top-20 bottom-0 flex translate-x-full flex-col bg-white px-6 py-4 md:static md:flex md:translate-x-0 md:flex-row md:items-center md:gap-1 md:bg-transparent md:p-0"
-          } transition-transform duration-300 md:static md:flex md:translate-x-0 md:flex-row md:items-center md:gap-1 md:bg-transparent md:p-0`}
+              ? "pointer-events-auto fixed inset-x-0 top-20 h-[calc(100dvh-5rem)] translate-x-0 overflow-y-auto bg-white px-6 py-4 xl:static xl:ml-auto xl:h-auto xl:overflow-visible xl:bg-transparent xl:p-0"
+              : "pointer-events-none fixed inset-x-0 top-20 h-[calc(100dvh-5rem)] translate-x-full overflow-y-auto bg-white px-6 py-4 xl:pointer-events-auto xl:static xl:ml-auto xl:h-auto xl:translate-x-0 xl:overflow-visible xl:flex-row xl:items-center xl:gap-1 xl:bg-transparent xl:p-0"
+          } flex flex-col transition-transform duration-300 xl:flex xl:translate-x-0 xl:flex-row xl:items-center xl:gap-1 xl:bg-transparent xl:p-0`}
           aria-label="Main navigation"
         >
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-bg-secondary hover:text-primary md:border-0 ${
+              className={`rounded-md border-b border-border-light px-4 py-4 text-[1.0625rem] font-medium transition-colors hover:bg-bg-secondary hover:text-primary xl:border-0 xl:px-3 xl:py-2 xl:text-sm ${
                 pathname === link.href
                   ? "font-semibold text-primary"
                   : "text-text-secondary"
-              } border-b border-border-light py-4 text-[1.0625rem] md:border-0 md:py-2 md:text-sm`}
+              }`}
               onClick={() => setMobileOpen(false)}
             >
               {link.label}
@@ -53,7 +65,7 @@ export default function Header() {
           ))}
           <Link
             href="/contact"
-            className="mt-6 rounded-md bg-accent px-6 py-2.5 text-center text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-accent-hover hover:shadow-md md:mt-0 md:ml-3"
+            className="mt-6 rounded-md bg-accent px-6 py-2.5 text-center text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-accent-hover hover:shadow-md xl:mt-0 xl:ml-3"
             onClick={() => setMobileOpen(false)}
           >
             Get In Touch
@@ -63,7 +75,7 @@ export default function Header() {
         {/* Hamburger */}
         <button
           type="button"
-          className="flex flex-col justify-center gap-[5px] p-1 md:hidden"
+          className="flex flex-col justify-center gap-[5px] p-1 xl:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
