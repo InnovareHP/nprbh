@@ -10,6 +10,7 @@ export default function Home() {
         size="full"
         align="left"
         image="/hero-home.jpeg"
+        imageAlt="A calm, professional healthcare environment representing behavioral health care."
         showStats
         title="Expanding Access to Specialized Behavioral Health Care"
         subtitle="National Behavioral & Psychiatric Health System develops and operates behavioral health facilities dedicated to providing specialized psychiatric care for adults and seniors. The standard we hold ourselves to is simple: the care we provide should reflect the care we would want for our own families."
@@ -30,7 +31,7 @@ export default function Home() {
 
       {/* About Preview */}
       <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-[1200px] px-6">
+        <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
           <div className="flex max-w-[800px] flex-col gap-4">
             <AnimatedSection>
               <span className="inline-block text-xs font-semibold uppercase tracking-[0.15em] text-accent">
@@ -67,7 +68,7 @@ export default function Home() {
 
       {/* Facilities Preview */}
       <section className="bg-bg-dark py-16 text-on-dark md:py-24">
-        <div className="mx-auto max-w-[1200px] px-6">
+        <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
           <div className="max-w-[640px]">
             <AnimatedSection>
               <p className="text-[1.0625rem] leading-relaxed text-on-dark-muted">
@@ -96,7 +97,7 @@ export default function Home() {
 
       {/* Contact */}
       <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-[1200px] px-6">
+        <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
           <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
             <div className="flex flex-col gap-4">
               <AnimatedSection direction="left">

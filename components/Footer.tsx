@@ -19,7 +19,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-bg-darker pt-20 text-on-dark-muted">
-      <div className="mx-auto max-w-[1200px] px-6">
+      <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
         <div className="grid grid-cols-1 gap-10 pb-16 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr] lg:gap-12">
           {/* Brand */}
           <div className="flex flex-col gap-5 sm:col-span-2 lg:col-span-1">
