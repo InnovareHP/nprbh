@@ -13,6 +13,7 @@ interface HeroProps {
   align?: "left" | "center";
   image?: string;
   imageAlt?: string;
+  overlayClassName?: string;
   showStats?: boolean;
 }
 
@@ -76,6 +77,7 @@ export default function Hero({
   align = "center",
   image = "/hero-home.jpeg",
   imageAlt = "",
+  overlayClassName = "bg-black/10",
   showStats = false,
 }: HeroProps) {
   const isCenter = align === "center";
@@ -109,7 +111,7 @@ export default function Hero({
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-black/10" />
+        <div className={`absolute inset-0 ${overlayClassName}`} />
       </div>
       <section
         className={`relative flex items-center overflow-hidden ${sizeClasses[size]}`}
