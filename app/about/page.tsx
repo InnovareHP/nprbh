@@ -73,7 +73,6 @@ export default function AboutPage() {
         align="center"
         image="/hero-about.jpg"
         imageAlt="Healthcare professionals collaborating in a clinical setting."
-        label="About NBPHS"
         title="National Behavioral & Psychiatric Health System"
       />
 
@@ -115,9 +114,6 @@ export default function AboutPage() {
       <section className="bg-bg-secondary py-16 md:py-24">
         <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
           <div className="mx-auto max-w-[800px] flex flex-col gap-5">
-            <span className="inline-block text-xs font-semibold uppercase tracking-[0.15em] text-accent">
-              Why It Matters
-            </span>
             <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.15] tracking-tight">
               Why It Matters
             </h2>
@@ -145,9 +141,6 @@ export default function AboutPage() {
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
           <div className="mx-auto max-w-[800px] flex flex-col gap-5">
-            <span className="inline-block text-xs font-semibold uppercase tracking-[0.15em] text-accent">
-              Our Approach
-            </span>
             <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.15] tracking-tight">
               Our Approach
             </h2>
@@ -182,9 +175,6 @@ export default function AboutPage() {
       <section className="bg-bg-secondary py-16 md:py-24">
         <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
           <div className="mx-auto max-w-[800px] flex flex-col gap-5">
-            <span className="inline-block text-xs font-semibold uppercase tracking-[0.15em] text-accent">
-              Our Commitment
-            </span>
             <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.15] tracking-tight">
               Our Commitment
             </h2>
@@ -213,9 +203,6 @@ export default function AboutPage() {
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
           <div className="mb-14 flex flex-col items-center text-center">
-            <span className="inline-block text-xs font-semibold uppercase tracking-[0.15em] text-accent">
-              Principles
-            </span>
             <h2 className="mt-4 text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.15] tracking-tight">
               Our Principles
             </h2>
@@ -242,9 +229,6 @@ export default function AboutPage() {
       <section className="bg-bg-secondary py-16 md:py-24" id="leadership">
         <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
           <div className="mb-6 flex flex-col items-center text-center">
-            <span className="inline-block text-xs font-semibold uppercase tracking-[0.15em] text-accent">
-              Leadership
-            </span>
             <h2 className="mt-4 text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.15] tracking-tight">
               Leadership Team
             </h2>
@@ -286,9 +270,6 @@ export default function AboutPage() {
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
           <div className="mx-auto max-w-[800px] flex flex-col gap-5">
-            <span className="inline-block text-xs font-semibold uppercase tracking-[0.15em] text-accent">
-              Operational Platform
-            </span>
             <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.15] tracking-tight">
               Operational Platform
             </h2>

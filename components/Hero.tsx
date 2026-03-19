@@ -77,11 +77,10 @@ export default function Hero({
   align = "center",
   image = "/hero-home.jpeg",
   imageAlt = "",
-  overlayClassName = "bg-black/10",
+  overlayClassName = "bg-black/45",
   showStats = false,
 }: HeroProps) {
   const isCenter = align === "center";
-  const isFullHero = size === "full";
 
   const containerVariants = {
     hidden: {},
@@ -148,9 +147,7 @@ export default function Hero({
           {subtitle && (
             <motion.p
               variants={itemVariants}
-              className={`mb-2 max-w-[560px] text-[clamp(1rem,2vw,1.25rem)] leading-relaxed drop-shadow-sm ${
-                isFullHero ? "text-white/95" : "text-on-dark-muted"
-              }`}
+              className="mb-2 max-w-[560px] text-[clamp(1rem,2vw,1.25rem)] leading-relaxed text-white/95 drop-shadow-sm"
             >
               {subtitle}
             </motion.p>
@@ -197,7 +194,7 @@ export default function Hero({
                       stat.value
                     )}
                   </span>
-                  <span className="text-[0.8125rem] font-medium uppercase tracking-widest text-on-dark-muted">
+                  <span className="text-[0.8125rem] font-medium uppercase tracking-widest text-white/90">
                     {stat.label}
                   </span>
                 </motion.div>
