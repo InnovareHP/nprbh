@@ -126,14 +126,6 @@ export default function Hero({
               : "mx-auto max-w-[800px] lg:ml-[max(24px,calc((100%-1200px)/2+24px))]"
           }`}
         >
-          {label && (
-            <motion.span
-              variants={itemVariants}
-              className="mb-6 inline-block text-xs font-semibold uppercase tracking-[0.2em] text-white"
-            >
-              {label}
-            </motion.span>
-          )}
           <motion.h1
             variants={itemVariants}
             className={`mb-6 max-w-[800px] font-bold leading-[1.1] tracking-tight text-white drop-shadow-sm ${
