@@ -33,7 +33,7 @@ export default function Header() {
           aria-label="NBPHS Home"
         >
           <Image
-            src="/logo.png"
+            src="/NBPHS Logo.png"
             alt="NBPHS Logo"
             width={100}
             height={100}
