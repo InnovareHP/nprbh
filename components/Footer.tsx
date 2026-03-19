@@ -25,7 +25,7 @@ export default function Footer() {
           <div className="flex flex-col gap-5 sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3">
               <Image
-                src="/NBPHS Logo.png"
+                src="/logo-white.png"
                 alt="NBPHS Logo"
                 width={150}
                 height={150}
