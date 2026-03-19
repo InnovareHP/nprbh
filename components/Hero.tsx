@@ -29,7 +29,7 @@ const stats = [
   { value: "6", label: "Behavioral Health Facilities" },
   { value: "4", label: "States Served" },
   { value: "Decades", label: "Healthcare Development & Operations Experience" },
-  { value: "Focused Care", label: "Adults and Seniors" },
+  { value: "Focused Care", label: "Adults & Seniors" },
 ];
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
@@ -71,7 +71,7 @@ function CountUpNumber({
 export default function Hero({
   title,
   subtitle,
-  label,
+  label: _label,
   children,
   size = "medium",
   align = "center",
@@ -158,40 +158,54 @@ export default function Hero({
       </section>
 
       {showStats && (
-        <section className="border-b-[3px] border-accent">
-          <div className="mx-auto grid max-w-[1200px] grid-cols-2 gap-6 px-[5vw] py-8 sm:px-6 md:grid-cols-4 md:gap-8 md:py-10">
-            {stats.map((stat, i) => {
-              const numericValue = Number.parseInt(stat.value, 10);
-              const isNumber = !Number.isNaN(numericValue);
+        <section className="relative py-16">
+          <div className="mx-auto max-w-4xl px-6">
+            <h2 className="mb-12 text-center text-4xl font-bold uppercase tracking-[0.12em] text-white sm:text-6xl">
+              At a Glance
+            </h2>
 
-              return (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.8 + i * 0.15,
-                    ease,
-                  }}
-                  className="flex flex-col items-center gap-1.5 text-center"
-                >
-                  <span className="text-4xl font-bold text-white">
-                    {isNumber ? (
-                      <CountUpNumber
-                        target={numericValue}
-                        delay={0.8 + i * 0.15 + 0.3}
-                      />
-                    ) : (
-                      stat.value
-                    )}
-                  </span>
-                  <span className="text-[0.8125rem] font-medium uppercase tracking-widest text-white/90">
-                    {stat.label}
-                  </span>
-                </motion.div>
-              );
-            })}
+            {/* The 2x2 Grid with Cross-lines */}
+            <div className="relative grid grid-cols-2 gap-0">
+              {/* Vertical Line */}
+              <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-white/30" />
+              {/* Horizontal Line */}
+              <div className="absolute top-1/2 left-0 h-px w-full -translate-y-1/2 bg-white/30" />
+
+              {stats.map((stat, i) => {
+                const numericValue = Number.parseInt(stat.value, 10);
+                const isNumber = !Number.isNaN(numericValue);
+                const isFocusedCare = stat.value === "Focused Care";
+
+                return (
+                  <motion.div
+                    key={stat.label}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.8, delay: 0.5 + i * 0.1 }}
+                    className="flex min-h-[170px] flex-col items-center justify-start px-8 pb-8 pt-10 text-center sm:min-h-[220px] sm:px-12 sm:pb-12 sm:pt-14"
+                  >
+                    <span
+                      className={`mb-2 inline-flex min-h-[1em] items-center justify-center font-bold uppercase leading-none tracking-tight text-white tabular-nums ${
+                        isFocusedCare ? "text-3xl sm:text-5xl" : "text-4xl sm:text-6xl"
+                      }`}
+                    >
+                      {isNumber ? (
+                        <CountUpNumber
+                          target={numericValue}
+                          delay={0.8 + i * 0.15}
+                        />
+                      ) : (
+                        stat.value
+                      )}
+                    </span>
+                    <div className="mb-3 hidden h-px w-8 bg-white/40 sm:block" />
+                    <span className="max-w-[220px] text-[0.875rem] font-bold uppercase tracking-[0.15em] leading-relaxed text-white/90 sm:text-[1rem]">
+                      {stat.label}
+                    </span>
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
         </section>
       )}
