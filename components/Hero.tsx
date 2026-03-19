@@ -75,7 +75,7 @@ export default function Hero({
   children,
   size = "medium",
   align = "center",
-  image = "/hero-home.jpeg",
+  image = "/home-test.png",
   imageAlt = "",
   overlayClassName = "bg-black/45",
   showStats = false,
@@ -186,7 +186,9 @@ export default function Hero({
                   >
                     <span
                       className={`mb-2 inline-flex min-h-[1em] items-center justify-center font-bold uppercase leading-none tracking-tight text-white tabular-nums ${
-                        isFocusedCare ? "text-3xl sm:text-5xl" : "text-4xl sm:text-6xl"
+                        isFocusedCare
+                          ? "text-3xl sm:text-5xl"
+                          : "text-4xl sm:text-6xl"
                       }`}
                     >
                       {isNumber ? (

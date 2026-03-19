@@ -1,6 +1,6 @@
-import Link from "next/link";
-import Hero from "@/components/Hero";
 import AnimatedSection from "@/components/AnimatedSection";
+import Hero from "@/components/Hero";
+import Link from "next/link";
 import ContactForm from "./contact/ContactForm";
 
 export default function Home() {
@@ -9,7 +9,7 @@ export default function Home() {
       <Hero
         size="full"
         align="left"
-        image="/home-hero.jpg"
+        image="/home-test.png"
         imageAlt="A calm, professional healthcare environment representing behavioral health care."
         overlayClassName="bg-black/60"
         showStats
