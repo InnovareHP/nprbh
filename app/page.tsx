@@ -9,7 +9,7 @@ export default function Home() {
       <Hero
         size="full"
         align="left"
-        image="/home-test.png"
+        image="/hero-image-1.jpg"
         imageAlt="A calm, professional healthcare environment representing behavioral health care."
         overlayClassName="bg-black/60"
         showStats

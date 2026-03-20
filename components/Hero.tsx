@@ -75,7 +75,7 @@ export default function Hero({
   children,
   size = "medium",
   align = "center",
-  image = "/home-test.png",
+  image = "/hero-image-1.jpg",
   imageAlt = "",
   overlayClassName = "bg-black/45",
   showStats = false,
@@ -159,7 +159,7 @@ export default function Hero({
 
       {showStats && (
         <section className="relative py-16">
-          <div className="mx-auto max-w-4xl px-6">
+          <div className="mx-auto max-w-4xl px-6 lg:max-w-3xl">
             <h2 className="mb-12 text-center text-4xl font-bold uppercase tracking-[0.12em] text-white sm:text-6xl">
               At a Glance
             </h2>
@@ -182,12 +182,14 @@ export default function Hero({
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.5 + i * 0.1 }}
-                    className="flex min-h-[170px] flex-col items-center justify-start px-8 pb-8 pt-10 text-center sm:min-h-[220px] sm:px-12 sm:pb-12 sm:pt-14"
+                    className="flex min-h-[170px] flex-col items-center justify-start px-8 pb-8 pt-10 text-center sm:min-h-[220px] sm:px-12 sm:pb-12 sm:pt-14 lg:min-h-[190px] lg:px-10 lg:pb-10 lg:pt-12"
                   >
                     <span
                       className={`mb-2 inline-flex min-h-[1em] items-center justify-center font-bold uppercase leading-none tracking-tight text-white tabular-nums ${
                         isFocusedCare
                           ? "text-3xl sm:text-5xl"
+                          : isNumber
+                          ? "text-5xl sm:text-7xl"
                           : "text-4xl sm:text-6xl"
                       }`}
                     >
