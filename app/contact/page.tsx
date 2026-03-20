@@ -1,6 +1,6 @@
+import Hero from "@/components/Hero";
 import type { Metadata } from "next";
 import Link from "next/link";
-import Hero from "@/components/Hero";
 import ContactForm from "./ContactForm";
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export default function ContactPage() {
       <Hero
         size="small"
         align="center"
-        image="/hero-contact.jpeg"
+        image="/hero-image-2.jpg"
         imageAlt="A healthcare office environment with team support."
         label="Contact"
         title="Contact Us"
@@ -49,6 +49,40 @@ export default function ContactPage() {
                       className="text-base font-medium text-primary transition-colors hover:text-accent"
                     >
                       info@nbphs.com
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent-bg text-xl">
+                    ☎
+                  </span>
+                  <div>
+                    <h3 className="mb-1 text-xs font-semibold uppercase tracking-widest text-text-light">
+                      Phone
+                    </h3>
+                    <a
+                      href="tel:+13179469319"
+                      className="text-base font-medium text-primary transition-colors hover:text-accent"
+                    >
+                      (317) 946-9319
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent-bg text-base font-semibold">
+                    in
+                  </span>
+                  <div>
+                    <h3 className="mb-1 text-xs font-semibold uppercase tracking-widest text-text-light">
+                      LinkedIn
+                    </h3>
+                    <a
+                      href="https://www.linkedin.com/company/national-behavioral-psychiatric-health-system/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-base font-medium text-primary transition-colors hover:text-accent"
+                    >
+                      National Behavioral & Psychiatric Health System
                     </a>
                   </div>
                 </div>

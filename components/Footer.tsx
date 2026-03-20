@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Linkedin, Mail, Phone } from "lucide-react";
 
 const quickLinks = [
   { href: "/about", label: "About Us" },
@@ -76,15 +77,26 @@ export default function Footer() {
             </h4>
             <a
               href="mailto:sarah.cotterill@gmail.com"
-              className="text-[0.9375rem] text-on-dark-muted transition-colors hover:text-white"
+              className="inline-flex items-center gap-2 text-[0.9375rem] text-on-dark-muted transition-colors hover:text-white"
             >
+              <Mail className="h-4 w-4 shrink-0" />
               sarah.cotterill@gmail.com
             </a>
             <a
               href="tel:+13179469319"
-              className="text-[0.9375rem] text-on-dark-muted transition-colors hover:text-white"
+              className="inline-flex items-center gap-2 text-[0.9375rem] text-on-dark-muted transition-colors hover:text-white"
             >
+              <Phone className="h-4 w-4 shrink-0" />
               (317) 946-9319
+            </a>
+            <a
+              href="https://www.linkedin.com/company/national-behavioral-psychiatric-health-system/"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 text-[0.9375rem] text-on-dark-muted transition-colors hover:text-white"
+            >
+              <Linkedin className="h-4 w-4 shrink-0" />
+              LinkedIn
             </a>
           </div>
         </div>

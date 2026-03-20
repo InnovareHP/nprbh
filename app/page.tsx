@@ -137,6 +137,62 @@ export default function Home() {
                   </div>
                 </div>
               </AnimatedSection>
+              <AnimatedSection direction="left" delay={0.35}>
+                <div className="mt-2 flex items-start gap-4">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent-bg text-xl">
+                    ✉
+                  </span>
+                  <div>
+                    <h3 className="mb-1 text-xs font-semibold uppercase tracking-widest text-text-light">
+                      Direct Email
+                    </h3>
+                    <a
+                      href="mailto:sarah.cotterill@gmail.com"
+                      className="text-base font-medium text-primary transition-colors hover:text-accent"
+                    >
+                      sarah.cotterill@gmail.com
+                    </a>
+                  </div>
+                </div>
+              </AnimatedSection>
+              <AnimatedSection direction="left" delay={0.4}>
+                <div className="mt-2 flex items-start gap-4">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent-bg text-xl">
+                    ☎
+                  </span>
+                  <div>
+                    <h3 className="mb-1 text-xs font-semibold uppercase tracking-widest text-text-light">
+                      Phone
+                    </h3>
+                    <a
+                      href="tel:+13179469319"
+                      className="text-base font-medium text-primary transition-colors hover:text-accent"
+                    >
+                      (317) 946-9319
+                    </a>
+                  </div>
+                </div>
+              </AnimatedSection>
+              <AnimatedSection direction="left" delay={0.45}>
+                <div className="mt-2 flex items-start gap-4">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent-bg text-base font-semibold">
+                    in
+                  </span>
+                  <div>
+                    <h3 className="mb-1 text-xs font-semibold uppercase tracking-widest text-text-light">
+                      LinkedIn
+                    </h3>
+                    <a
+                      href="https://www.linkedin.com/company/national-behavioral-psychiatric-health-system/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-base font-medium text-primary transition-colors hover:text-accent"
+                    >
+                      /company/national-behavioral-psychiatric-health-system
+                    </a>
+                  </div>
+                </div>
+              </AnimatedSection>
             </div>
             <AnimatedSection direction="right" delay={0.2}>
               <div className="rounded-2xl border border-border-light bg-white p-7 shadow-lg md:p-10">
