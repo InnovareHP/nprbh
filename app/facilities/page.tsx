@@ -48,7 +48,6 @@ export default function FacilitiesPage() {
         align="center"
         image="/hero-facilities.jpg"
         imageAlt="Exterior view of a modern behavioral health facility."
-        label="Our Facilities"
         title="Our Behavioral Health Facilities"
         subtitle="National Behavioral & Psychiatric Health System develops and operates behavioral health facilities dedicated to expanding access to specialized psychiatric care in the communities we serve."
       />

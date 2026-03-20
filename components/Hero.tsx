@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 interface HeroProps {
   title: string;
   subtitle?: string;
-  label?: string;
   children?: React.ReactNode;
   size?: "full" | "medium" | "small";
   align?: "left" | "center";
@@ -71,7 +70,6 @@ function CountUpNumber({
 export default function Hero({
   title,
   subtitle,
-  label: _label,
   children,
   size = "medium",
   align = "center",
@@ -100,7 +98,6 @@ export default function Hero({
 
   return (
     <div className="relative overflow-x-hidden">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_80%,rgba(137, 168, 235, 0.15)_0%,transparent_60%),radial-gradient(ellipse_at_80%_20%,rgba(196,154,108,0.1)_0%,transparent_50%)]" />
 
       <div className="absolute inset-0 -z-10">
         <Image

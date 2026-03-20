@@ -64,7 +64,6 @@ export default function ServicesPage() {
         align="center"
         image="/hero-service.jpg"
         imageAlt="A care team supporting a patient in a clinical environment."
-        label="Our Services"
         title="What We Do"
         subtitle="End-to-end behavioral health solutions — from facility development through clinical operations."
       />

@@ -17,7 +17,6 @@ export default function ContactPage() {
         align="center"
         image="/hero-image-2.jpg"
         imageAlt="A healthcare office environment with team support."
-        label="Contact"
         title="Contact Us"
         subtitle="National Behavioral & Psychiatric Health System welcomes inquiries from physicians, healthcare partners, and community organizations interested in learning more about our facilities and development initiatives."
       />

@@ -31,7 +31,6 @@ export default function GalleryPage() {
         align="center"
         image="/hero-home.jpeg"
         imageAlt="A modern healthcare facility entrance."
-        label="Our Portfolio"
         title="Facility Gallery"
         subtitle="Purpose-built behavioral health environments designed for healing, dignity, and clinical excellence."
       />

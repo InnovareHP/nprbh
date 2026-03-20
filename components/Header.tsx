@@ -10,6 +10,7 @@ const navLinks = [
   { href: "/about", label: "About" },
   { href: "/facilities", label: "Facilities" },
   { href: "/services", label: "Services" },
+  { href: "/gallery", label: "Gallery" },
 ];
 
 export default function Header() {
@@ -44,16 +45,16 @@ export default function Header() {
         <nav
           className={`${
             mobileOpen
-              ? "pointer-events-auto fixed inset-x-0 top-20 h-[calc(100dvh-5rem)] translate-x-0 overflow-y-auto bg-white px-6 py-4 xl:static xl:ml-auto xl:h-auto xl:overflow-visible xl:bg-transparent xl:p-0"
-              : "pointer-events-none fixed inset-x-0 top-20 h-[calc(100dvh-5rem)] translate-x-full overflow-y-auto bg-white px-6 py-4 xl:pointer-events-auto xl:static xl:ml-auto xl:h-auto xl:translate-x-0 xl:overflow-visible xl:flex-row xl:items-center xl:gap-1 xl:bg-transparent xl:p-0"
-          } flex flex-col transition-transform duration-300 xl:flex xl:translate-x-0 xl:flex-row xl:items-center xl:gap-1 xl:bg-transparent xl:p-0`}
+              ? "pointer-events-auto fixed inset-x-0 top-20 h-[calc(100dvh-5rem)] translate-x-0 overflow-y-auto bg-white px-6 py-4 lg:static lg:ml-auto lg:h-auto lg:overflow-visible lg:bg-transparent lg:p-0"
+              : "pointer-events-none fixed inset-x-0 top-20 h-[calc(100dvh-5rem)] translate-x-full overflow-y-auto bg-white px-6 py-4 lg:pointer-events-auto lg:static lg:ml-auto lg:h-auto lg:translate-x-0 lg:overflow-visible lg:flex-row lg:items-center lg:gap-1 lg:bg-transparent lg:p-0"
+          } flex flex-col transition-transform duration-300 lg:flex lg:translate-x-0 lg:flex-row lg:items-center lg:gap-1 lg:bg-transparent lg:p-0`}
           aria-label="Main navigation"
         >
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`rounded-md border-b border-border-light px-4 py-4 text-[1.0625rem] font-medium transition-colors hover:bg-bg-secondary hover:text-primary xl:border-0 xl:px-3 xl:py-2 xl:text-sm ${
+              className={`rounded-md border-b border-border-light px-4 py-4 text-[1.0625rem] font-medium transition-colors hover:bg-bg-secondary hover:text-primary lg:border-0 lg:px-3 lg:py-2 lg:text-sm ${
                 pathname === link.href
                   ? "font-semibold text-primary"
                   : "text-text-secondary"
@@ -65,7 +66,7 @@ export default function Header() {
           ))}
           <Link
             href="/contact"
-            className="mt-6 rounded-md bg-accent px-6 py-2.5 text-center text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-accent-hover hover:shadow-md xl:mt-0 xl:ml-3"
+            className="mt-6 rounded-md bg-accent px-6 py-2.5 text-center text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-accent-hover hover:shadow-md lg:mt-0 lg:ml-3"
             onClick={() => setMobileOpen(false)}
           >
             Get In Touch
@@ -75,7 +76,7 @@ export default function Header() {
         {/* Hamburger */}
         <button
           type="button"
-          className="flex flex-col justify-center gap-[5px] p-1 xl:hidden"
+          className="flex flex-col justify-center gap-[5px] p-1 lg:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
