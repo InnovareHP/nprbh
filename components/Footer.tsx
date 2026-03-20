@@ -1,6 +1,6 @@
+import { Linkedin, Mail, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Linkedin, Mail, Phone } from "lucide-react";
 
 const quickLinks = [
   { href: "/about", label: "About Us" },
@@ -96,7 +96,7 @@ export default function Footer() {
               className="inline-flex items-center gap-2 text-[0.9375rem] text-on-dark-muted transition-colors hover:text-white"
             >
               <Linkedin className="h-4 w-4 shrink-0" />
-              LinkedIn
+              NBPHS
             </a>
           </div>
         </div>

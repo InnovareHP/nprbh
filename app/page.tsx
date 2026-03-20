@@ -188,7 +188,7 @@ export default function Home() {
                       rel="noreferrer"
                       className="text-base font-medium text-primary transition-colors hover:text-accent"
                     >
-                      National Behavioral & Psychiatric Health System
+                      NBPHS
                     </a>
                   </div>
                 </div>
