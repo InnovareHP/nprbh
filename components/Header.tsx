@@ -37,7 +37,7 @@ export default function Header() {
             alt="NBPHS Logo"
             width={140}
             height={140}
-            className="h-auto w-[112px] sm:w-[138px]"
+            className="h-auto w-[124px] sm:w-[146px] lg:w-[152px]"
           />
         </Link>
 

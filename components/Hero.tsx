@@ -19,7 +19,7 @@ interface HeroProps {
 
 const sizeClasses = {
   full:
-    "min-h-[calc(100svh-6rem)] px-0 py-4 sm:min-h-[calc(100svh-7rem)] sm:py-5 md:h-[calc(100svh-7rem)] md:min-h-0 lg:py-6",
+    "min-h-fit px-0 py-6 sm:min-h-[calc(100svh-7rem)] sm:py-5 md:h-[calc(100svh-7rem)] md:min-h-0 lg:py-6",
   medium:
     "min-h-[460px] pt-24 pb-16 sm:min-h-[520px] sm:pt-28 sm:pb-20 md:min-h-[500px] md:pt-32 md:pb-20",
   small:
@@ -121,7 +121,7 @@ export default function Hero({
         }`}
       >
         {isFull ? (
-          <div className="mx-auto flex h-full w-full max-w-[1200px] flex-col justify-center px-[5vw] sm:px-6">
+          <div className="mx-auto flex h-full w-full max-w-[1200px] flex-col justify-start px-[5vw] sm:justify-center sm:px-6">
             <motion.div
               variants={containerVariants}
               initial="hidden"

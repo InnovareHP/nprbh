@@ -1,6 +1,6 @@
 "use client";
 
-import { Cookie, X } from "lucide-react";
+import { Info, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -28,7 +28,7 @@ export default function CookieDisclosureBanner() {
 
   return (
     <div
-      className={`fixed inset-x-0 bottom-0 z-60 px-3 pb-3 transition-all duration-300 sm:px-5 sm:pb-5 ${
+      className={`fixed inset-x-0 bottom-0 z-60 transition-all duration-300 ${
         isClosing
           ? "translate-y-2 opacity-0"
           : isEntered
@@ -36,54 +36,35 @@ export default function CookieDisclosureBanner() {
           : "translate-y-3 opacity-0"
       }`}
     >
-      <div
-        className="mx-auto max-w-[1200px] overflow-hidden rounded-2xl border border-white/10 bg-bg-darker/95 shadow-[0_-12px_36px_rgba(3,44,101,0.28)] backdrop-blur-md"
-      >
-        <div className="h-1 w-full bg-linear-to-r from-accent via-primary-light to-gold" />
-        <div className="flex flex-col gap-4 p-4 sm:p-5 lg:flex-row lg:items-start lg:justify-between lg:gap-8">
-          <div className="max-w-[860px]">
-            <div className="flex items-center gap-2.5">
-              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/8 text-on-dark">
-                <Cookie className="h-4 w-4" />
-              </span>
-              <p className="text-[0.75rem] font-semibold uppercase tracking-[0.16em] text-on-dark">
-                Cookie Notice
-              </p>
-            </div>
-            <p className="mt-2.5 max-w-[780px] text-[0.9375rem] leading-7 text-on-dark-muted">
+      <div className="border-t border-white/10 bg-primary text-white shadow-[0_-10px_30px_rgba(3,44,101,0.22)]">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 md:px-8">
+          <div className="flex min-w-0 items-center gap-3">
+            <Info className="h-[18px] w-[18px] shrink-0 text-white/75" />
+
+            <p className="text-[11px] leading-snug text-white/92 sm:text-xs md:text-sm">
               We use cookies and similar technologies to support essential site
-              functionality and improve your browsing experience.
-            </p>
-            <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-[0.875rem] text-on-dark-muted">
+              functionality and improve your browsing experience. Email us at{" "}
               <Link
                 href="mailto:info@nbphs.com"
-                className="font-medium text-on-dark transition-colors hover:text-white"
-              >
-                Email us
-              </Link>
-              <span className="hidden h-1 w-1 rounded-full bg-white/25 sm:inline-block" />
-              <span>
-                Questions?{" "}
-              </span>
-              <Link
-                href="mailto:info@nbphs.com"
-                className="font-medium text-on-dark transition-colors hover:text-white"
+                className="font-semibold text-white underline transition-colors hover:text-white/80"
               >
                 info@nbphs.com
-              </Link>
-            </div>
+              </Link>{" "}
+              if you encounter any issues.
+            </p>
           </div>
 
-          <div className="flex items-center self-end sm:self-start lg:shrink-0">
-            <button
-              type="button"
-              onClick={handleDismiss}
-              className="inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-md border border-white/12 text-on-dark-muted transition-all hover:scale-[1.02] hover:bg-white/8 hover:text-white"
-              aria-label="Close cookie notice"
-            >
-              <X className="h-4 w-4" />
-            </button>
-          </div>
+          <button
+            type="button"
+            onClick={handleDismiss}
+            className="group flex shrink-0 cursor-pointer items-center gap-2 rounded-lg p-1.5 transition-colors hover:bg-white/10"
+            aria-label="Close cookie notice"
+          >
+            <span className="hidden text-[10px] font-bold uppercase tracking-wider text-white/70 group-hover:text-white sm:inline">
+              Close
+            </span>
+            <X className="h-[18px] w-[18px] text-white/90" />
+          </button>
         </div>
       </div>
     </div>
