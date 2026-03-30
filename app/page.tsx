@@ -14,7 +14,6 @@ export default function Home() {
         overlayClassName="bg-black/60"
         showStats
         title="Expanding Access to Specialized Behavioral Health Care"
-        subtitle="National Behavioral & Psychiatric Health System develops and operates behavioral health facilities dedicated to providing specialized psychiatric care for adults and seniors. The standard we hold ourselves to is simple: the care we provide should reflect the care we would want for our own families."
       >
         <Link
           href="/facilities"
@@ -29,6 +28,31 @@ export default function Home() {
           About NBPHS
         </Link>
       </Hero>
+
+      <section className="py-8 md:py-10">
+        <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
+          <AnimatedSection>
+            <div className="grid gap-6 rounded-2xl border border-border-light bg-white p-6 shadow-sm md:grid-cols-[240px_1fr] md:items-center md:gap-8 md:p-8">
+              <div>
+                <span className="inline-block text-xs font-semibold uppercase tracking-[0.15em] text-accent">
+                  Who We Are
+                </span>
+                <h2 className="mt-2 text-[clamp(1.5rem,3vw,2.25rem)] font-bold leading-[1.15] tracking-tight text-primary">
+                  Specialized behavioral health care with a patient-first
+                  standard.
+                </h2>
+              </div>
+              <p className="max-w-[70ch] text-[1.0625rem] leading-relaxed text-text-secondary">
+                National Behavioral &amp; Psychiatric Health System develops and
+                operates behavioral health facilities dedicated to providing
+                specialized psychiatric care for adults and seniors. We measure
+                our work against a simple standard: the care we provide should
+                reflect the care we would want for our own families.
+              </p>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
 
       {/* About Preview */}
       <section className="py-16 md:py-24">
