@@ -24,7 +24,7 @@ export default function Header() {
   }, [mobileOpen]);
 
   return (
-    <header className="sticky top-0 z-50 h-20 border-b border-border-light bg-white/97 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 h-24 border-b border-border-light bg-white/97 backdrop-blur-sm sm:h-28">
       <div className="mx-auto flex h-full max-w-[1200px] items-center justify-between px-4 sm:px-6">
         {/* Logo */}
         <Link
@@ -35,8 +35,9 @@ export default function Header() {
           <Image
             src="/NBPHS Logo.png"
             alt="NBPHS Logo"
-            width={100}
-            height={100}
+            width={140}
+            height={140}
+            className="h-auto w-[112px] sm:w-[138px]"
           />
         </Link>
 
@@ -44,8 +45,8 @@ export default function Header() {
         <nav
           className={`${
             mobileOpen
-              ? "pointer-events-auto fixed inset-x-0 top-20 h-[calc(100dvh-5rem)] translate-x-0 overflow-y-auto bg-white px-6 py-4 xl:static xl:ml-auto xl:h-auto xl:overflow-visible xl:bg-transparent xl:p-0"
-              : "pointer-events-none fixed inset-x-0 top-20 h-[calc(100dvh-5rem)] translate-x-full overflow-y-auto bg-white px-6 py-4 xl:pointer-events-auto xl:static xl:ml-auto xl:h-auto xl:translate-x-0 xl:overflow-visible xl:flex-row xl:items-center xl:gap-1 xl:bg-transparent xl:p-0"
+              ? "pointer-events-auto fixed inset-x-0 top-24 h-[calc(100dvh-6rem)] translate-x-0 overflow-y-auto bg-white px-6 py-4 sm:top-28 sm:h-[calc(100dvh-7rem)] xl:static xl:ml-auto xl:h-auto xl:overflow-visible xl:bg-transparent xl:p-0"
+              : "pointer-events-none fixed inset-x-0 top-24 h-[calc(100dvh-6rem)] translate-x-full overflow-y-auto bg-white px-6 py-4 sm:top-28 sm:h-[calc(100dvh-7rem)] xl:pointer-events-auto xl:static xl:ml-auto xl:h-auto xl:translate-x-0 xl:overflow-visible xl:flex-row xl:items-center xl:gap-1 xl:bg-transparent xl:p-0"
           } flex flex-col transition-transform duration-300 xl:flex xl:translate-x-0 xl:flex-row xl:items-center xl:gap-1 xl:bg-transparent xl:p-0`}
           aria-label="Main navigation"
         >

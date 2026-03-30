@@ -62,12 +62,21 @@ export default function ServicesPage() {
       <Hero
         size="small"
         align="center"
-        image="/hero-service.jpg"
+        image="/hero-service-2.jpg"
         imageAlt="A care team supporting a patient in a clinical environment."
-        label="Our Services"
         title="What We Do"
-        subtitle="End-to-end behavioral health solutions — from facility development through clinical operations."
       />
+
+      <section className="bg-bg-secondary py-14 md:py-18">
+        <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
+          <div className="mx-auto max-w-[760px] text-center">
+            <p className="text-[1.0625rem] leading-relaxed text-text-secondary">
+              End-to-end behavioral health solutions, from facility development
+              through clinical operations.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Services */}
       {services.map((service, index) => (
@@ -113,7 +122,7 @@ export default function ServicesPage() {
       ))}
 
       {/* CTA */}
-      <section className="bg-gradient-to-br from-[#032c66] to-[#043c8a] py-16 md:py-24">
+      <section className="bg-linear-to-br from-[#032c66] to-[#043c8a] py-16 md:py-24">
         <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
           <div className="flex flex-col items-center text-center">
             <h2 className="text-[clamp(1.75rem,4vw,2.5rem)] font-bold tracking-tight text-white">

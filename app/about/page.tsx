@@ -71,7 +71,7 @@ export default function AboutPage() {
       <Hero
         size="small"
         align="center"
-        image="/hero-about.jpg"
+        image="/hero-about-2.jpg"
         imageAlt="Healthcare professionals collaborating in a clinical setting."
         title="National Behavioral & Psychiatric Health System"
       />

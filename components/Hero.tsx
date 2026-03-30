@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 interface HeroProps {
-  title: string;
+  title?: string;
   subtitle?: string;
   label?: string;
   children?: React.ReactNode;
@@ -18,7 +18,8 @@ interface HeroProps {
 }
 
 const sizeClasses = {
-  full: "min-h-[calc(100svh-5rem)] px-0 py-4 sm:py-5 md:h-[calc(100svh-5rem)] md:min-h-0 lg:py-6",
+  full:
+    "min-h-[calc(100svh-6rem)] px-0 py-4 sm:min-h-[calc(100svh-7rem)] sm:py-5 md:h-[calc(100svh-7rem)] md:min-h-0 lg:py-6",
   medium:
     "min-h-[460px] pt-24 pb-16 sm:min-h-[520px] sm:pt-28 sm:pb-20 md:min-h-[500px] md:pt-32 md:pb-20",
   small:
@@ -131,12 +132,14 @@ export default function Hero({
                   : "max-w-[760px]"
               }`}
             >
-              <motion.h1
-                variants={itemVariants}
-                className="mb-4 max-w-[800px] text-[clamp(1.75rem,4vw,3.2rem)] font-bold leading-[1.08] tracking-tight text-white drop-shadow-sm"
-              >
-                {title}
-              </motion.h1>
+              {title && (
+                <motion.h1
+                  variants={itemVariants}
+                  className="mb-4 max-w-[800px] text-[clamp(1.75rem,4vw,3.2rem)] font-bold leading-[1.08] tracking-tight text-white drop-shadow-sm"
+                >
+                  {title}
+                </motion.h1>
+              )}
               {subtitle && (
                 <motion.p
                   variants={itemVariants}
@@ -231,16 +234,18 @@ export default function Hero({
                 : "mx-auto max-w-[800px] lg:ml-[max(24px,calc((100%-1200px)/2+24px))]"
             }`}
           >
-            <motion.h1
-              variants={itemVariants}
-              className={`mb-6 max-w-[800px] font-bold leading-[1.1] tracking-tight text-white drop-shadow-sm ${
-                size === "small"
-                  ? "text-[clamp(1.75rem,4vw,2.75rem)]"
-                  : "text-[clamp(2.25rem,5.5vw,4rem)]"
-              }`}
-            >
-              {title}
-            </motion.h1>
+            {title && (
+              <motion.h1
+                variants={itemVariants}
+                className={`mb-6 max-w-[800px] font-bold leading-[1.1] tracking-tight text-white drop-shadow-sm ${
+                  size === "small"
+                    ? "text-[clamp(1.75rem,4vw,2.75rem)]"
+                    : "text-[clamp(2.25rem,5.5vw,4rem)]"
+                }`}
+              >
+                {title}
+              </motion.h1>
+            )}
             {subtitle && (
               <motion.p
                 variants={itemVariants}
