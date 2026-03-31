@@ -20,6 +20,7 @@ export default function ContactPage() {
         label="Contact"
         title="Contact Us"
         subtitle="National Behavioral & Psychiatric Health System welcomes inquiries from physicians, healthcare partners, and community organizations interested in learning more about our facilities and development initiatives."
+        imageClassName="grayscale"
       />
 
       <section className="py-16 md:py-24">
@@ -88,8 +89,8 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Form */}
-            <div className="rounded-2xl border border-border-light bg-white p-7 shadow-lg md:p-10">
-              <ContactForm />
+            <div className="rounded-2xl bg-bg-secondary/45 px-5 py-6 sm:px-8 sm:py-8">
+              <ContactForm variant="homeMinimal" />
             </div>
           </div>
         </div>

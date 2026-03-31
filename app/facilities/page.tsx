@@ -1,4 +1,4 @@
-import Hero from "@/components/Hero";
+import AnimatedSection from "@/components/AnimatedSection";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -57,34 +57,77 @@ const facilities = [
 export default function FacilitiesPage() {
   return (
     <>
-      <Hero
-        size="small"
-        align="center"
-        image="/hero-facilities.jpg"
-        imageAlt="Exterior view of a modern behavioral health facility."
-        title="Our Behavioral Health Facilities"
-      />
-
-      <section className="bg-bg-secondary py-14 md:py-18">
+      <section className="bg-white pt-16 pb-12 md:pt-20 md:pb-16">
         <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
-          <div className="mx-auto max-w-[760px] text-center">
-            <p className="text-[1.0625rem] leading-relaxed text-text-secondary">
-              National Behavioral &amp; Psychiatric Health System develops and
-              operates behavioral health facilities dedicated to expanding
-              access to specialized psychiatric care in the communities we
-              serve.
-            </p>
-          </div>
+          <AnimatedSection>
+            <div className="mx-auto flex max-w-[760px] flex-col items-center text-center">
+              <span className="inline-block text-[0.72rem] font-medium uppercase tracking-[0.42em] text-accent">
+                Facilities
+              </span>
+              <h1 className="mt-5 text-[clamp(2.3rem,5vw,4rem)] font-light uppercase leading-none tracking-[0.08em] text-text-primary">
+                Our Behavioral Health Facilities
+              </h1>
+              <p className="mt-8 max-w-[620px] text-[1rem] leading-8 text-text-secondary sm:text-[1.0625rem]">
+                National Behavioral &amp; Psychiatric Health System develops and
+                operates behavioral health facilities dedicated to expanding
+                access to specialized psychiatric care in the communities we
+                serve.
+              </p>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      <section className="relative h-[52svh] min-h-[340px] sm:h-[58svh] sm:min-h-[400px] md:h-[68svh] md:min-h-[520px]">
+        <div
+          className="absolute inset-0 bg-cover bg-center grayscale md:bg-fixed"
+          style={{ backgroundImage: 'url("/hero-facilities.jpg")' }}
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-black/18" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 z-10 flex -translate-y-1/2 justify-center">
+          <a
+            href="#facilities-overview"
+            className="pointer-events-auto inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-white text-text-light shadow-sm transition-all hover:border-primary/30 hover:text-primary sm:h-12 sm:w-12"
+            aria-label="Scroll to facilities content"
+          >
+            <span className="inline-flex animate-[bounce_1.8s_ease-in-out_infinite]">
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </span>
+          </a>
+        </div>
+      </section>
+
+      <section id="facilities-overview" className="bg-bg-secondary py-14 md:py-18">
+        <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
+          <AnimatedSection>
+            <div className="mx-auto max-w-[760px] text-center">
+              <span className="inline-block text-xs font-semibold uppercase tracking-[0.15em] text-accent">
+                Our Network
+              </span>
+              <p className="mt-5 text-[1.0625rem] leading-relaxed text-text-secondary">
+                Below are the facilities currently operating or in development
+                within the NBPHS network.
+              </p>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* Facilities Grid */}
       <section className="pt-8 pb-16 md:pt-10 md:pb-24">
         <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
-          <p className="mx-auto mb-14 max-w-[700px] text-center text-[1.0625rem] leading-relaxed text-text-secondary">
-            Below are the facilities currently operating or in development
-            within the NBPHS network.
-          </p>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {facilities.map((facility) => {
               const hasWebsite = facility.href !== "#";

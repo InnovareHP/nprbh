@@ -24,40 +24,45 @@ export default function Header() {
   }, [mobileOpen]);
 
   return (
-    <header className="sticky top-0 z-50 h-24 border-b border-border-light bg-white/97 backdrop-blur-sm sm:h-28">
-      <div className="mx-auto flex h-full max-w-[1200px] items-center justify-between px-4 sm:px-6">
-        {/* Logo */}
+    <header className="sticky top-0 z-50 h-32 bg-primary sm:h-40">
+      {/* max-w-[1100px] ensures the content stays centered.
+        px-12 and lg:px-24 provide the large margins on the left and right.
+      */}
+      <div className="mx-auto flex h-full max-w-[1100px] items-center justify-between px-12 lg:px-24">
+        {/* Logo Section */}
         <Link
           href="/"
-          className="z-50 flex shrink-0 items-center gap-3"
+          className="z-50 flex shrink-0 flex-col items-center gap-1"
           aria-label="NBPHS Home"
         >
           <Image
             src="/NBPHS Logo.png"
             alt="NBPHS Logo"
-            width={140}
-            height={140}
-            className="h-auto w-[124px] sm:w-[146px] lg:w-[152px]"
+            /* Enlarged by 20% (120 * 1.2 = 144) */
+            width={144}
+            height={96}
+            /* Invert keeps the logo readable against the dark navbar background. */
+            className="h-auto w-[124px] brightness-0 invert sm:w-[144px]"
           />
         </Link>
 
-        {/* Desktop Nav */}
+        {/* Desktop Navigation */}
         <nav
           className={`${
             mobileOpen
-              ? "pointer-events-auto fixed inset-x-0 top-24 h-[calc(100dvh-6rem)] translate-x-0 overflow-y-auto bg-white px-6 py-4 sm:top-28 sm:h-[calc(100dvh-7rem)] xl:static xl:ml-auto xl:h-auto xl:overflow-visible xl:bg-transparent xl:p-0"
-              : "pointer-events-none fixed inset-x-0 top-24 h-[calc(100dvh-6rem)] translate-x-full overflow-y-auto bg-white px-6 py-4 sm:top-28 sm:h-[calc(100dvh-7rem)] xl:pointer-events-auto xl:static xl:ml-auto xl:h-auto xl:translate-x-0 xl:overflow-visible xl:flex-row xl:items-center xl:gap-1 xl:bg-transparent xl:p-0"
-          } flex flex-col transition-transform duration-300 xl:flex xl:translate-x-0 xl:flex-row xl:items-center xl:gap-1 xl:bg-transparent xl:p-0`}
+              ? "fixed inset-0 top-0 z-40 flex flex-col items-center justify-center space-y-8 bg-primary"
+              : "hidden xl:flex xl:items-center xl:gap-14"
+          }`}
           aria-label="Main navigation"
         >
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`rounded-md border-b border-border-light px-4 py-4 text-[1.0625rem] font-medium transition-colors hover:bg-bg-secondary hover:text-primary xl:border-0 xl:px-3 xl:py-2 xl:text-sm ${
+              className={`text-xs font-medium uppercase tracking-[0.2em] transition-colors hover:text-white ${
                 pathname === link.href
-                  ? "font-semibold text-primary"
-                  : "text-text-secondary"
+                  ? "text-on-dark underline underline-offset-8 decoration-on-dark/50"
+                  : "text-on-dark-muted"
               }`}
               onClick={() => setMobileOpen(false)}
             >
@@ -66,34 +71,34 @@ export default function Header() {
           ))}
           <Link
             href="/contact"
-            className="mt-6 rounded-md bg-accent px-6 py-2.5 text-center text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-accent-hover hover:shadow-md xl:mt-0 xl:ml-3"
+            className="rounded-full border border-on-dark/40 px-5 py-2 text-xs font-medium uppercase tracking-[0.2em] text-on-dark transition-colors hover:bg-white hover:text-primary xl:ml-2"
             onClick={() => setMobileOpen(false)}
           >
             Get In Touch
           </Link>
         </nav>
 
-        {/* Hamburger */}
+        {/* Mobile Toggle Button (Hamburger) */}
         <button
           type="button"
-          className="flex flex-col justify-center gap-[5px] p-1 xl:hidden"
+          className="z-50 flex flex-col justify-center gap-[6px] xl:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
         >
           <span
-            className={`block h-0.5 w-7 rounded-full bg-primary transition-transform ${
-              mobileOpen ? "translate-x-0 translate-y-[7px] rotate-45" : ""
+            className={`block h-0.5 w-6 bg-on-dark transition-all duration-300 ${
+              mobileOpen ? "rotate-45 translate-y-2" : ""
             }`}
           />
           <span
-            className={`block h-0.5 w-7 rounded-full bg-primary transition-opacity ${
+            className={`block h-0.5 w-6 bg-on-dark transition-all duration-300 ${
               mobileOpen ? "opacity-0" : ""
             }`}
           />
           <span
-            className={`block h-0.5 w-7 rounded-full bg-primary transition-transform ${
-              mobileOpen ? "-translate-y-[7px] -rotate-45" : ""
+            className={`block h-0.5 w-6 bg-on-dark transition-all duration-300 ${
+              mobileOpen ? "-rotate-45 -translate-y-2" : ""
             }`}
           />
         </button>
