@@ -153,26 +153,14 @@ export default function Hero({
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_80%,rgba(137, 168, 235, 0.15)_0%,transparent_60%),radial-gradient(ellipse_at_80%_20%,rgba(196,154,108,0.1)_0%,transparent_50%)]" />
 
       <div className="absolute inset-0 -z-10">
-        {isFull ? (
-          <div
-            className={`absolute inset-0 bg-cover bg-no-repeat grayscale ${imageClassName}`}
-            style={{
-              backgroundImage: `url("${image}")`,
-              backgroundAttachment: "fixed",
-              backgroundPosition: "center 60%",
-            }}
-            aria-hidden="true"
-          />
-        ) : (
-          <Image
-            src={image}
-            alt={imageAlt}
-            fill
-            priority
-            className={`object-cover object-[center_60%] sm:object-center ${imageClassName}`}
-            sizes="100vw"
-          />
-        )}
+        <Image
+          src={image}
+          alt={imageAlt}
+          fill
+          priority={isFull}
+          className={`object-cover object-[center_58%] sm:object-[center_52%] md:object-center ${imageClassName}`}
+          sizes="100vw"
+        />
         <div className={`absolute inset-0 ${overlayClassName}`} />
       </div>
       <section
