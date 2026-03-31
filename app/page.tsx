@@ -12,11 +12,11 @@ export default function Home() {
         image="/hero-image-3.jpg"
         imageAlt="A calm, professional healthcare environment representing behavioral health care."
         overlayClassName="bg-black/35"
-        imageClassName="grayscale"
+        imageClassName="grayscale object-right sm:object-[82%_center] md:object-[72%_center] lg:object-center"
         typewriterLines={[
-          "Expanding Access",
-          "to Specialized",
-          "Behavioral Health Care",
+          "Expanding Access to",
+          "Specialized Behavioral",
+          "Health Care",
         ]}
         scrollTargetId="who-we-are"
       />
