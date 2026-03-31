@@ -170,7 +170,7 @@ export default function Hero({
       >
         {isFull ? (
           <>
-            <div className="mx-auto flex h-full w-full max-w-[1100px] flex-col justify-center px-6 pb-14 pt-3 sm:px-12 sm:pb-16 sm:pt-4 lg:px-24">
+            <div className="mx-auto flex h-full w-full max-w-[1100px] flex-col justify-end px-6 pb-16 pt-3 sm:justify-center sm:px-12 sm:pb-16 sm:pt-4 lg:px-24">
               <motion.div
                 variants={containerVariants}
                 initial="hidden"

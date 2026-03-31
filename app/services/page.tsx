@@ -1,4 +1,5 @@
 import AnimatedSection from "@/components/AnimatedSection";
+import Hero from "@/components/Hero";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -59,64 +60,23 @@ const services = [
 export default function ServicesPage() {
   return (
     <>
-      <section className="bg-white pt-16 pb-12 md:pt-20 md:pb-16">
-        <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
-          <AnimatedSection>
-            <div className="mx-auto flex max-w-[760px] flex-col items-center text-center">
-              <span className="inline-block text-[0.72rem] font-medium uppercase tracking-[0.42em] text-accent">
-                Services
-              </span>
-              <h1 className="mt-5 text-[clamp(2.3rem,5vw,4rem)] font-light uppercase leading-none tracking-[0.08em] text-text-primary">
-                What We Do
-              </h1>
-              <p className="mt-8 max-w-[620px] text-[1rem] leading-8 text-text-secondary sm:text-[1.0625rem]">
-                End-to-end behavioral health solutions, from facility development
-                through clinical operations.
-              </p>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      <section className="relative h-[52svh] min-h-[340px] sm:h-[58svh] sm:min-h-[400px] md:h-[68svh] md:min-h-[520px]">
-        <div
-          className="absolute inset-0 bg-cover bg-center grayscale md:bg-fixed"
-          style={{ backgroundImage: 'url("/hero-service-2.jpg")' }}
-          aria-hidden="true"
-        />
-        <div className="absolute inset-0 bg-black/18" />
-        <div className="pointer-events-none absolute inset-x-0 top-0 z-10 flex -translate-y-1/2 justify-center">
-          <a
-            href="#services-overview"
-            className="pointer-events-auto inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-white text-text-light shadow-sm transition-all hover:border-primary/30 hover:text-primary sm:h-12 sm:w-12"
-            aria-label="Scroll to services content"
-          >
-            <span className="inline-flex animate-[bounce_1.8s_ease-in-out_infinite]">
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 24 24"
-                className="h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="m6 9 6 6 6-6" />
-              </svg>
-            </span>
-          </a>
-        </div>
-      </section>
+      <Hero
+        size="small"
+        align="center"
+        image="/hero-service-2.jpg"
+        imageAlt="A care team supporting a patient in a clinical environment."
+        imageClassName="grayscale"
+        title="What We Do"
+      />
 
       <section id="services-overview" className="bg-bg-secondary py-14 md:py-18">
         <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
           <AnimatedSection>
             <div className="mx-auto max-w-[760px] text-center">
-              <span className="inline-block text-xs font-semibold uppercase tracking-[0.15em] text-accent">
+              <span className="inline-block text-[0.72rem] font-medium uppercase tracking-[0.42em] text-accent">
                 Overview
               </span>
-              <p className="mt-5 text-[1.0625rem] leading-relaxed text-text-secondary">
+              <p className="mt-5 text-[1rem] leading-8 text-text-secondary sm:text-[1.0625rem]">
                 We provide end-to-end behavioral health solutions, from facility
                 development through clinical operations and specialized senior
                 behavioral healthcare programs.

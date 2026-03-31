@@ -25,11 +25,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 h-32 bg-primary sm:h-40">
-      {/* max-w-[1100px] ensures the content stays centered.
-        px-12 and lg:px-24 provide the large margins on the left and right.
-      */}
-      <div className="mx-auto flex h-full max-w-[1100px] items-center justify-between px-12 lg:px-24">
-        {/* Logo Section */}
+      <div className="mx-auto flex h-full max-w-[1100px] items-center justify-between px-6 sm:px-12 lg:px-24">
         <Link
           href="/"
           className="z-50 flex shrink-0 flex-col items-center gap-1"
@@ -38,19 +34,16 @@ export default function Header() {
           <Image
             src="/NBPHS Logo.png"
             alt="NBPHS Logo"
-            /* Enlarged by 20% (120 * 1.2 = 144) */
             width={144}
             height={96}
-            /* Invert keeps the logo readable against the dark navbar background. */
-            className="h-auto w-[124px] brightness-0 invert sm:w-[144px]"
+            className="h-auto w-[146px] brightness-0 invert sm:w-[144px]"
           />
         </Link>
 
-        {/* Desktop Navigation */}
         <nav
           className={`${
             mobileOpen
-              ? "fixed inset-0 top-0 z-40 flex flex-col items-center justify-center space-y-8 bg-primary"
+              ? "fixed inset-0 top-0 z-40 flex flex-col items-center justify-center space-y-10 bg-primary"
               : "hidden xl:flex xl:items-center xl:gap-14"
           }`}
           aria-label="Main navigation"
@@ -59,9 +52,9 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-xs font-medium uppercase tracking-[0.2em] transition-colors hover:text-white ${
+              className={`text-sm font-medium uppercase tracking-[0.24em] transition-colors hover:text-white sm:text-xs sm:tracking-[0.2em] ${
                 pathname === link.href
-                  ? "text-on-dark underline underline-offset-8 decoration-on-dark/50"
+                  ? "text-on-dark underline decoration-on-dark/50 underline-offset-8"
                   : "text-on-dark-muted"
               }`}
               onClick={() => setMobileOpen(false)}
@@ -71,34 +64,33 @@ export default function Header() {
           ))}
           <Link
             href="/contact"
-            className="rounded-full border border-on-dark/40 px-5 py-2 text-xs font-medium uppercase tracking-[0.2em] text-on-dark transition-colors hover:bg-white hover:text-primary xl:ml-2"
+            className="rounded-md border border-on-dark/40 px-7 py-3 text-sm font-medium uppercase tracking-[0.22em] text-on-dark transition-colors hover:bg-white hover:text-primary sm:px-5 sm:py-2 sm:text-xs sm:tracking-[0.2em] xl:ml-2"
             onClick={() => setMobileOpen(false)}
           >
             Get In Touch
           </Link>
         </nav>
 
-        {/* Mobile Toggle Button (Hamburger) */}
         <button
           type="button"
-          className="z-50 flex flex-col justify-center gap-[6px] xl:hidden"
+          className="z-50 flex flex-col justify-center gap-[7px] xl:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
         >
           <span
-            className={`block h-0.5 w-6 bg-on-dark transition-all duration-300 ${
-              mobileOpen ? "rotate-45 translate-y-2" : ""
+            className={`block h-0.5 w-7 bg-on-dark transition-all duration-300 ${
+              mobileOpen ? "translate-y-[8px] rotate-45" : ""
             }`}
           />
           <span
-            className={`block h-0.5 w-6 bg-on-dark transition-all duration-300 ${
+            className={`block h-0.5 w-7 bg-on-dark transition-all duration-300 ${
               mobileOpen ? "opacity-0" : ""
             }`}
           />
           <span
-            className={`block h-0.5 w-6 bg-on-dark transition-all duration-300 ${
-              mobileOpen ? "-rotate-45 -translate-y-2" : ""
+            className={`block h-0.5 w-7 bg-on-dark transition-all duration-300 ${
+              mobileOpen ? "-translate-y-[8px] -rotate-45" : ""
             }`}
           />
         </button>

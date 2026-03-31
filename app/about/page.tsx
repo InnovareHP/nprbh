@@ -261,7 +261,7 @@ export default function AboutPage() {
           <AnimatedSection>
             <div className="mx-auto max-w-[800px] flex flex-col gap-5">
               <span className="inline-block text-xs font-semibold uppercase tracking-[0.15em] text-accent">
-                Why It Matters
+                Care Gap
               </span>
               <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.15] tracking-tight">
                 Why It Matters
@@ -293,7 +293,7 @@ export default function AboutPage() {
           <AnimatedSection>
             <div className="mx-auto max-w-[800px] flex flex-col gap-5">
               <span className="inline-block text-xs font-semibold uppercase tracking-[0.15em] text-accent">
-                Our Approach
+                How We Work
               </span>
               <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.15] tracking-tight">
                 Our Approach
@@ -332,7 +332,7 @@ export default function AboutPage() {
           <AnimatedSection>
             <div className="mx-auto max-w-[800px] flex flex-col gap-5">
               <span className="inline-block text-xs font-semibold uppercase tracking-[0.15em] text-accent">
-                Our Commitment
+                Long-Term Perspective
               </span>
               <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.15] tracking-tight">
                 Our Commitment
@@ -365,7 +365,7 @@ export default function AboutPage() {
           <AnimatedSection>
             <div className="mb-14 flex flex-col items-center text-center">
               <span className="inline-block text-xs font-semibold uppercase tracking-[0.15em] text-accent">
-                Our Principles
+                Core Principles
               </span>
               <h2 className="mt-4 text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.15] tracking-tight">
                 Our Principles
@@ -395,7 +395,7 @@ export default function AboutPage() {
           <AnimatedSection>
             <div className="mx-auto max-w-[800px] flex flex-col gap-5">
               <span className="inline-block text-xs font-semibold uppercase tracking-[0.15em] text-accent">
-                Operational Platform
+                Operational Support
               </span>
               <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.15] tracking-tight">
                 Operational Platform
