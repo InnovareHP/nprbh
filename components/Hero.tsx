@@ -36,6 +36,14 @@ const stats = [
   { value: "Focused Care", label: "Adults & Seniors" },
 ];
 
+function getMobileStatLabelLines(stat: { value: string; label: string }) {
+  if (stat.value === "6") return ["Behavioral Health", "Facilities"];
+  if (stat.value === "4") return ["States", "Served"];
+  if (stat.value === "Decades") return ["Healthcare Development", "& Operations Experience"];
+  if (stat.value === "Focused Care") return ["Adults", "& Seniors"];
+  return [stat.label];
+}
+
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 function CountUpNumber({
@@ -237,7 +245,50 @@ export default function Hero({
                   transition={{ duration: 0.6, delay: 0.45, ease }}
                   className="relative mt-9 w-full max-w-[760px] self-center pt-1.5 sm:mt-8 sm:pt-2.5 lg:mt-7"
                 >
-                  <div className="relative grid grid-cols-2 gap-0">
+                  <div className="flex flex-col gap-4 sm:hidden">
+                    {stats.map((stat, i) => {
+                      const numericValue = Number.parseInt(stat.value, 10);
+                      const isNumber = !Number.isNaN(numericValue);
+                      const labelLines = getMobileStatLabelLines(stat);
+
+                      return (
+                        <motion.div
+                          key={stat.label}
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ duration: 0.45, delay: 0.55 + i * 0.08 }}
+                          className="grid grid-cols-[72px_1fr] items-center gap-4"
+                        >
+                          <span
+                            className={`text-right font-light leading-none tracking-tight text-white ${
+                              isNumber ? "text-[3.15rem]" : "text-[2.1rem]"
+                            }`}
+                          >
+                            {isNumber ? (
+                              <CountUpNumber
+                                target={numericValue}
+                                delay={0.7 + i * 0.1}
+                              />
+                            ) : (
+                              stat.value
+                            )}
+                          </span>
+                          <div className="flex flex-col items-start gap-2">
+                            {labelLines.map((line) => (
+                              <span
+                                key={`${stat.label}-${line}`}
+                                className="inline-flex bg-[#252525]/92 px-3 py-2 text-[0.86rem] font-medium leading-none tracking-[0.02em] text-white"
+                              >
+                                {line}
+                              </span>
+                            ))}
+                          </div>
+                        </motion.div>
+                      );
+                    })}
+                  </div>
+
+                  <div className="relative hidden grid-cols-2 gap-0 sm:grid">
                     <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-white/30" />
                     <div className="absolute top-1/2 left-0 h-px w-full -translate-y-1/2 bg-white/30" />
 

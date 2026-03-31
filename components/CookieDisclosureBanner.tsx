@@ -36,13 +36,16 @@ export default function CookieDisclosureBanner() {
           : "translate-y-3 opacity-0"
       }`}
     >
-      <div className="mx-auto max-w-[860px] rounded-2xl border border-white/10 bg-primary/96 text-white shadow-[0_16px_40px_rgba(3,44,101,0.26)] backdrop-blur-md">
-        <div className="h-1 w-full rounded-t-2xl bg-linear-to-r from-accent via-primary-light to-gold" />
+      <div
+        className="mx-auto max-w-[860px] rounded-2xl border border-white/8 text-white shadow-[0_16px_40px_rgba(0,0,0,0.24)] backdrop-blur-md"
+        style={{ backgroundColor: "rgba(37, 37, 37, 0.96)" }}
+      >
+        <div className="h-1 w-full rounded-t-2xl bg-linear-to-r from-[#5d5d5d] via-white/40 to-[#8a8a8a]" />
         <div className="relative p-4 sm:p-5">
           <button
             type="button"
             onClick={handleDismiss}
-            className="group absolute right-3 top-3 inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-white/10 text-white/80 transition-all hover:scale-[1.02] hover:bg-white/10 hover:text-white sm:right-4 sm:top-4"
+            className="group absolute right-3 top-3 inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-white/8 text-white/75 transition-all hover:scale-[1.02] hover:bg-white/8 hover:text-white sm:right-4 sm:top-4"
             aria-label="Close cookie notice"
           >
             <X className="h-[18px] w-[18px]" />
@@ -50,10 +53,10 @@ export default function CookieDisclosureBanner() {
 
           <div className="pr-12 sm:pr-14">
             <div className="flex items-center gap-2.5">
-              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/8 text-white">
+              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/6 text-white/92">
                 <Info className="h-[16px] w-[16px]" />
               </span>
-              <p className="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-white/88">
+              <p className="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-white/82">
                 Cookie Notice
               </p>
             </div>
@@ -63,15 +66,15 @@ export default function CookieDisclosureBanner() {
               your browsing experience.
             </p>
 
-            <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 text-[0.875rem] text-white/72">
+            <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 text-[0.875rem] text-white/65">
               <Link
                 href="mailto:info@nbphs.com"
-                className="font-medium text-white transition-colors hover:text-white/80"
+                className="font-medium text-white/92 transition-colors hover:text-white"
               >
                 Email us
               </Link>
-              <span className="hidden h-1 w-1 rounded-full bg-white/25 sm:inline-block" />
-              <span>info@nbphs.com</span>
+              <span className="hidden h-1 w-1 rounded-full bg-white/20 sm:inline-block" />
+              <span className="text-white/72">info@nbphs.com</span>
             </div>
           </div>
         </div>
