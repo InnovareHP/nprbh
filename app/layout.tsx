@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { cookies } from "next/headers";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -40,11 +41,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const hasAccepted = cookieStore.get("cookie_consent")?.value === "true";
+
   return (
     <html lang="en" className="overflow-x-hidden">
       <body
@@ -53,7 +57,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
-        <CookieDisclosureBanner />
+        <CookieDisclosureBanner hasAccepted={!!hasAccepted} />
       </body>
     </html>
   );

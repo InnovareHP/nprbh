@@ -43,8 +43,8 @@ const facilities = [
     name: "Palm Grove Health Center",
     location: "Florida",
     status: "Opening winter 2027",
-    image: "/facilities/palm-grove-health-center.png",
-    href: "#",
+    image: "/facilities/palm-grove-logo.png",
+    href: "https://www.palmgrovehealthcenter.com/",
   },
 ];
 
@@ -99,10 +99,12 @@ export default function FacilitiesPage() {
                     facility.image === "/facilities/logo-mbh.png"
                       ? "scale-115 p-1"
                       : facility.image === "/facilities/trbh-logo.png"
-                        ? "scale-110 p-3"
-                        : facility.image === "/facilities/harmony-health-logo.png"
-                          ? "scale-110 p-3"
-                          : "p-6";
+                      ? "scale-110 p-3"
+                      : facility.image === "/facilities/harmony-health-logo.png"
+                      ? "scale-110 p-3"
+                      : facility.image === "/facilities/palm-grove-logo.png"
+                      ? "scale-150 p-3"
+                      : "p-6";
 
                   if (hasWebsite) {
                     return (
