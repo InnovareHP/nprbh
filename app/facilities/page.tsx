@@ -1,8 +1,8 @@
+import AnimatedSection from "@/components/AnimatedSection";
+import Hero from "@/components/Hero";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import AnimatedSection from "@/components/AnimatedSection";
-import Hero from "@/components/Hero";
 
 export const metadata: Metadata = {
   title: "Facilities",
@@ -17,13 +17,6 @@ const facilities = [
     status: null,
     image: "/facilities/trbh-logo.png",
     href: "https://trbhcares.com/",
-  },
-  {
-    name: "Three Rivers Residential Care",
-    location: "Pennsylvania",
-    status: null,
-    image: "/facilities/rivers-residence-logo.png",
-    href: "https://riversresidence.com/",
   },
   {
     name: "Harmony Behavioral Health",
@@ -119,24 +112,20 @@ export default function FacilitiesPage() {
                       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     />
                   </div>
-                  <div className="flex flex-1 flex-col p-6">
-                    <h3 className="text-[1.0625rem] font-bold text-primary">
-                      {facility.name}
-                    </h3>
-                    <p className="mt-1 text-sm font-medium text-text-secondary">
-                      {facility.location}
-                    </p>
-                    {facility.status && (
-                      <span className="mt-3 inline-flex w-fit rounded-full bg-accent-bg px-3 py-1 text-xs font-semibold text-accent">
-                        {facility.status}
-                      </span>
-                    )}
-                    {!hasWebsite && (
-                      <span className="mt-3 text-xs font-medium uppercase tracking-[0.12em] text-text-light">
-                        Website Coming Soon
-                      </span>
-                    )}
-                  </div>
+                  {(facility.status || !hasWebsite) && (
+                    <div className="flex flex-1 flex-col p-6">
+                      {facility.status && (
+                        <span className="inline-flex w-fit rounded-full bg-accent-bg px-3 py-1 text-xs font-semibold text-accent">
+                          {facility.status}
+                        </span>
+                      )}
+                      {!hasWebsite && (
+                        <span className="mt-3 text-xs font-medium uppercase tracking-[0.12em] text-text-light">
+                          Coming Soon
+                        </span>
+                      )}
+                    </div>
+                  )}
                 </>
               );
 

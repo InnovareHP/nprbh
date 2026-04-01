@@ -117,7 +117,7 @@ export default function AboutPage() {
           style={{ backgroundImage: 'url("/hero-about-2.jpg")' }}
           aria-hidden="true"
         />
-        <div className="absolute inset-0 bg-black/18" />
+        <div className="absolute inset-0 bg-primary/55 md:bg-black/18" />
         <div className="pointer-events-none absolute inset-x-0 top-0 z-10 flex -translate-y-1/2 justify-center">
           <a
             href="#about-content"
