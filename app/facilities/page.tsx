@@ -1,8 +1,8 @@
-import AnimatedSection from "@/components/AnimatedSection";
-import Hero from "@/components/Hero";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import AnimatedSection from "@/components/AnimatedSection";
+import Hero from "@/components/Hero";
 
 export const metadata: Metadata = {
   title: "Facilities",
@@ -67,7 +67,10 @@ export default function FacilitiesPage() {
         title="Our Behavioral Health Facilities"
       />
 
-      <section id="facilities-overview" className="bg-bg-secondary py-14 md:py-18">
+      <section
+        id="facilities-overview"
+        className="bg-bg-secondary py-14 md:py-18"
+      >
         <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
           <AnimatedSection>
             <div className="mx-auto max-w-[760px] text-center">
@@ -95,7 +98,7 @@ export default function FacilitiesPage() {
             </p>
           </AnimatedSection>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {facilities.map((facility) => {
+            {facilities.map((facility, index) => {
               const hasWebsite = facility.href !== "#";
               const cardClassName = hasWebsite
                 ? "flex flex-col overflow-hidden rounded-2xl border border-border-light bg-white shadow-sm transition-all hover:-translate-y-0.5 hover:border-border hover:shadow-lg"
@@ -139,20 +142,26 @@ export default function FacilitiesPage() {
 
               if (hasWebsite) {
                 return (
-                  <Link
+                  <AnimatedSection
                     key={facility.name}
-                    href={facility.href}
-                    className={cardClassName}
+                    delay={index * 0.08}
+                    direction={index % 2 === 0 ? "up" : "none"}
                   >
-                    {cardContent}
-                  </Link>
+                    <Link href={facility.href} className={cardClassName}>
+                      {cardContent}
+                    </Link>
+                  </AnimatedSection>
                 );
               }
 
               return (
-                <article key={facility.name} className={cardClassName}>
-                  {cardContent}
-                </article>
+                <AnimatedSection
+                  key={facility.name}
+                  delay={index * 0.08}
+                  direction={index % 2 === 0 ? "up" : "none"}
+                >
+                  <article className={cardClassName}>{cardContent}</article>
+                </AnimatedSection>
               );
             })}
           </div>
