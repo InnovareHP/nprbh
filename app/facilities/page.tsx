@@ -29,7 +29,7 @@ const facilities = [
     name: "Missions Behavioral Health",
     location: "Indiana",
     status: null,
-    image: "/facilities/missions-logo.png",
+    image: "/facilities/logo-mbh.png",
     href: "https://www.mbhcares.com/",
   },
   {
@@ -90,70 +90,62 @@ export default function FacilitiesPage() {
               within the NBPHS network.
             </p>
           </AnimatedSection>
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {facilities.map((facility, index) => {
-              const hasWebsite = facility.href !== "#";
-              const cardClassName = hasWebsite
-                ? "flex flex-col overflow-hidden rounded-2xl border border-border-light bg-white shadow-sm transition-all hover:-translate-y-0.5 hover:border-border hover:shadow-lg"
-                : "flex flex-col overflow-hidden rounded-2xl border border-border-light bg-white shadow-sm";
+          <AnimatedSection>
+            <div className="overflow-hidden rounded-3xl border border-border-light bg-border-light shadow-sm">
+              <div className="grid grid-cols-1 gap-px bg-border-light sm:grid-cols-2 lg:grid-cols-3">
+                {facilities.map((facility) => {
+                  const hasWebsite = facility.href !== "#";
+                  const logoClassName =
+                    facility.image === "/facilities/logo-mbh.png"
+                      ? "scale-115 p-1"
+                      : facility.image === "/facilities/trbh-logo.png"
+                        ? "scale-110 p-3"
+                        : facility.image === "/facilities/harmony-health-logo.png"
+                          ? "scale-110 p-3"
+                          : "p-6";
 
-              const cardContent = (
-                <>
-                  <div className="relative aspect-16/10 overflow-hidden bg-linear-to-br from-bg-secondary to-[#e8edf3]">
-                    <Image
-                      src={facility.image}
-                      alt={facility.name}
-                      fill
-                      className={`object-contain ${
-                        facility.image === "/facilities/missions-logo.png"
-                          ? "p-5"
-                          : "p-6"
-                      }`}
-                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                    />
-                  </div>
-                  {(facility.status || !hasWebsite) && (
-                    <div className="flex flex-1 flex-col p-6">
+                  if (hasWebsite) {
+                    return (
+                      <Link
+                        key={facility.name}
+                        href={facility.href}
+                        className="group flex min-h-[220px] items-center justify-center bg-white p-8 transition-colors hover:bg-bg-secondary/70"
+                      >
+                        <div className="relative h-full min-h-[110px] w-full max-w-[280px]">
+                          <Image
+                            src={facility.image}
+                            alt={facility.name}
+                            fill
+                            className={`object-contain transition-transform duration-300 group-hover:scale-[1.02] ${logoClassName}`}
+                            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                          />
+                        </div>
+                      </Link>
+                    );
+                  }
+
+                  return (
+                    <article
+                      key={facility.name}
+                      className="flex min-h-[220px] flex-col items-center justify-center bg-white px-8 py-10 text-center"
+                    >
+                      <h3 className="max-w-[18ch] text-[1.125rem] font-semibold leading-tight text-primary">
+                        {facility.name}
+                      </h3>
                       {facility.status && (
-                        <span className="inline-flex w-fit rounded-full bg-accent-bg px-3 py-1 text-xs font-semibold text-accent">
+                        <span className="mt-4 inline-flex rounded-full bg-accent-bg px-3 py-1 text-xs font-semibold text-accent">
                           {facility.status}
                         </span>
                       )}
-                      {!hasWebsite && (
-                        <span className="mt-3 text-xs font-medium uppercase tracking-[0.12em] text-text-light">
-                          Coming Soon
-                        </span>
-                      )}
-                    </div>
-                  )}
-                </>
-              );
-
-              if (hasWebsite) {
-                return (
-                  <AnimatedSection
-                    key={facility.name}
-                    delay={index * 0.08}
-                    direction={index % 2 === 0 ? "up" : "none"}
-                  >
-                    <Link href={facility.href} className={cardClassName}>
-                      {cardContent}
-                    </Link>
-                  </AnimatedSection>
-                );
-              }
-
-              return (
-                <AnimatedSection
-                  key={facility.name}
-                  delay={index * 0.08}
-                  direction={index % 2 === 0 ? "up" : "none"}
-                >
-                  <article className={cardClassName}>{cardContent}</article>
-                </AnimatedSection>
-              );
-            })}
-          </div>
+                      <span className="mt-3 text-xs font-medium uppercase tracking-[0.12em] text-text-light">
+                        Coming Soon
+                      </span>
+                    </article>
+                  );
+                })}
+              </div>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
     </>
