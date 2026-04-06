@@ -97,14 +97,14 @@ export default function FacilitiesPage() {
                   const hasWebsite = facility.href !== "#";
                   const logoClassName =
                     facility.image === "/facilities/logo-mbh.png"
-                      ? "scale-115 p-1"
+                      ? "scale-100 p-3"
                       : facility.image === "/facilities/trbh-logo.png"
-                      ? "scale-110 p-3"
+                      ? "scale-95 p-4"
                       : facility.image === "/facilities/harmony-health-logo.png"
-                      ? "scale-110 p-3"
+                      ? "scale-95 p-4"
                       : facility.image === "/facilities/palm-grove-logo.png"
                       ? "scale-150 p-3"
-                      : "p-6";
+                      : "scale-90 p-5";
 
                   if (hasWebsite) {
                     return (
