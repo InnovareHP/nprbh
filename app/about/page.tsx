@@ -92,7 +92,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
           <AnimatedSection>
             <div className="mx-auto flex max-w-[760px] flex-col items-center text-center">
-              <span className="inline-block text-[0.72rem] font-medium uppercase tracking-[0.42em] text-accent">
+              <span className="inline-block text-[1rem] font-medium uppercase tracking-[0.42em] text-accent">
                 About NBPHS
               </span>
               <h1 className="mt-5 text-[clamp(2.3rem,5vw,4rem)] font-light uppercase leading-none tracking-[0.08em] text-text-primary">

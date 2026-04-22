@@ -25,7 +25,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 h-32 bg-primary sm:h-40">
-      <div className="mx-auto flex h-full max-w-[1100px] items-center justify-between px-6 sm:px-12 lg:px-24">
+      <div className="mx-auto flex h-full max-w-[1300px] items-center justify-between px-6 sm:px-12 lg:pl-20 lg:pr-10">
         <Link
           href="/"
           className="z-50 flex shrink-0 flex-col items-center gap-1"
@@ -44,7 +44,7 @@ export default function Header() {
           className={`${
             mobileOpen
               ? "fixed inset-0 top-0 z-40 flex flex-col items-center justify-center space-y-10 bg-primary"
-              : "hidden xl:flex xl:items-center xl:gap-14"
+              : "hidden xl:flex xl:items-center xl:gap-8"
           }`}
           aria-label="Main navigation"
         >

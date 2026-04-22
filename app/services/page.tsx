@@ -76,7 +76,7 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
           <AnimatedSection>
             <div className="mx-auto max-w-[760px] text-center">
-              <span className="inline-block text-[0.72rem] font-medium uppercase tracking-[0.42em] text-accent">
+              <span className="inline-block text-[1rem] font-medium uppercase tracking-[0.42em] text-accent">
                 Overview
               </span>
               <p className="mt-5 text-[1rem] leading-8 text-text-secondary sm:text-[1.0625rem]">

@@ -26,7 +26,7 @@ export default function Home() {
           <AnimatedSection>
             <div className="mx-auto flex max-w-[760px] flex-col items-center text-center">
               <div className="flex flex-col items-center">
-                <span className="inline-block text-[0.68rem] font-semibold uppercase tracking-[0.3em] text-accent">
+                <span className="inline-block text-[1rem] font-semibold uppercase tracking-[0.3em] text-accent">
                   Who We Are
                 </span>
                 <h2 className="mt-5 max-w-[26ch] text-[clamp(2rem,4.6vw,3.75rem)] font-light uppercase leading-[1.08] tracking-[0.08em] text-text-primary">
@@ -79,7 +79,7 @@ export default function Home() {
         <AnimatedSection>
           <div className="border-y border-border-light bg-white px-[5vw] py-12 text-center text-text-primary sm:px-6 md:py-14">
             <div className="mx-auto max-w-[760px]">
-              <span className="inline-block text-[0.72rem] font-medium uppercase tracking-[0.45em] text-accent">
+              <span className="inline-block text-[1rem] font-medium uppercase tracking-[0.45em] text-accent">
                 Get In Touch
               </span>
               <h2 className="mt-4 text-[clamp(1.75rem,4vw,2.6rem)] font-semibold tracking-tight text-text-primary">
