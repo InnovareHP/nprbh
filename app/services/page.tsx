@@ -1,6 +1,7 @@
-import Hero from "@/components/Hero";
 import type { Metadata } from "next";
 import Link from "next/link";
+import AnimatedSection from "@/components/AnimatedSection";
+import Hero from "@/components/Hero";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -64,17 +65,27 @@ export default function ServicesPage() {
         align="center"
         image="/hero-service-2.jpg"
         imageAlt="A care team supporting a patient in a clinical environment."
+        imageClassName="grayscale"
         title="What We Do"
       />
 
-      <section className="bg-bg-secondary py-14 md:py-18">
+      <section
+        id="services-overview"
+        className="bg-bg-secondary py-14 md:py-18"
+      >
         <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
-          <div className="mx-auto max-w-[760px] text-center">
-            <p className="text-[1.0625rem] leading-relaxed text-text-secondary">
-              End-to-end behavioral health solutions, from facility development
-              through clinical operations.
-            </p>
-          </div>
+          <AnimatedSection>
+            <div className="mx-auto max-w-[760px] text-center">
+              <span className="inline-block text-[1rem] font-medium uppercase tracking-[0.42em] text-accent">
+                Overview
+              </span>
+              <p className="mt-5 text-[1rem] leading-8 text-text-secondary sm:text-[1.0625rem]">
+                We provide end-to-end behavioral health solutions, from facility
+                development through clinical operations and specialized senior
+                behavioral healthcare programs.
+              </p>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
@@ -89,33 +100,37 @@ export default function ServicesPage() {
         >
           <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
             <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
-              <div className="flex flex-col gap-4">
-                <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-bold leading-[1.2] tracking-tight text-primary">
-                  {service.title}
-                </h2>
-                <p className="text-[1.0625rem] font-semibold text-accent">
-                  {service.subtitle}
-                </p>
-                <p className="text-[1.0625rem] leading-relaxed text-text-secondary">
-                  {service.description}
-                </p>
-              </div>
-              <div className="rounded-2xl border border-accent/10 bg-accent-bg p-7 md:p-9">
-                <h3 className="mb-5 text-sm font-bold uppercase tracking-wide text-primary">
-                  Key Capabilities
-                </h3>
-                <ul className="flex flex-col gap-3.5">
-                  {service.features.map((feature) => (
-                    <li
-                      key={feature}
-                      className="flex items-start gap-3 text-[0.9375rem] leading-snug text-text-secondary"
-                    >
-                      <span className="mt-[0.5em] h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <AnimatedSection direction="left">
+                <div className="flex flex-col gap-4">
+                  <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-bold leading-[1.2] tracking-tight text-primary">
+                    {service.title}
+                  </h2>
+                  <p className="text-[1.0625rem] font-semibold text-accent">
+                    {service.subtitle}
+                  </p>
+                  <p className="text-[1.0625rem] leading-relaxed text-text-secondary">
+                    {service.description}
+                  </p>
+                </div>
+              </AnimatedSection>
+              <AnimatedSection delay={0.12} direction="right">
+                <div className="rounded-2xl border border-accent/10 bg-accent-bg p-7 md:p-9">
+                  <h3 className="mb-5 text-sm font-bold uppercase tracking-wide text-primary">
+                    Key Capabilities
+                  </h3>
+                  <ul className="flex flex-col gap-3.5">
+                    {service.features.map((feature) => (
+                      <li
+                        key={feature}
+                        className="flex items-start gap-3 text-[0.9375rem] leading-snug text-text-secondary"
+                      >
+                        <span className="mt-[0.5em] h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </AnimatedSection>
             </div>
           </div>
         </section>
@@ -124,30 +139,32 @@ export default function ServicesPage() {
       {/* CTA */}
       <section className="bg-linear-to-br from-[#032c66] to-[#043c8a] py-16 md:py-24">
         <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
-          <div className="flex flex-col items-center text-center">
-            <h2 className="text-[clamp(1.75rem,4vw,2.5rem)] font-bold tracking-tight text-white">
-              Let&apos;s Build Something Meaningful
-            </h2>
-            <p className="mt-4 max-w-[540px] text-[1.0625rem] leading-relaxed text-on-dark-muted">
-              Whether you&apos;re exploring a new facility development, seeking
-              an experienced operational partner, or looking to launch senior
-              behavioral health programs — we&apos;re ready to help.
-            </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link
-                href="/contact"
-                className="inline-flex w-full items-center justify-center rounded-md border-2 border-white bg-white px-10 py-[18px] text-base font-bold text-primary transition-all hover:-translate-y-0.5 hover:bg-bg-secondary hover:shadow-lg sm:w-auto"
-              >
-                Start a Conversation
-              </Link>
-              <Link
-                href="/about"
-                className="inline-flex w-full items-center justify-center rounded-md border-2 border-white/40 bg-transparent px-10 py-[18px] text-base font-semibold text-white transition-all hover:border-white/70 hover:bg-white/10 sm:w-auto"
-              >
-                Learn About Us
-              </Link>
+          <AnimatedSection>
+            <div className="flex flex-col items-center text-center">
+              <h2 className="text-[clamp(1.75rem,4vw,2.5rem)] font-bold tracking-tight text-white">
+                Let&apos;s Build Something Meaningful
+              </h2>
+              <p className="mt-4 max-w-[540px] text-[1.0625rem] leading-relaxed text-on-dark-muted">
+                Whether you&apos;re exploring a new facility development,
+                seeking an experienced operational partner, or looking to launch
+                senior behavioral health programs — we&apos;re ready to help.
+              </p>
+              <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+                <Link
+                  href="/contact"
+                  className="inline-flex w-full items-center justify-center rounded-md border-2 border-white bg-white px-10 py-[18px] text-base font-bold text-primary transition-all hover:-translate-y-0.5 hover:bg-bg-secondary hover:shadow-lg sm:w-auto"
+                >
+                  Start a Conversation
+                </Link>
+                <Link
+                  href="/about"
+                  className="inline-flex w-full items-center justify-center rounded-md border-2 border-white/40 bg-transparent px-10 py-[18px] text-base font-semibold text-white transition-all hover:border-white/70 hover:bg-white/10 sm:w-auto"
+                >
+                  Learn About Us
+                </Link>
+              </div>
             </div>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
     </>
