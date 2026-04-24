@@ -41,7 +41,7 @@ const facilities = [
     status: "Opening fall 2026",
     image: "/facilities/magnolia-logo-3.png",
     href: "#",
-    mapUrl: null,
+    mapUrl: "https://maps.app.goo.gl/Nnnrd316vMHSZsjs6",
   },
   {
     name: "Palm Grove Health Center",
