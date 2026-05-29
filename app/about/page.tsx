@@ -1,5 +1,5 @@
-import AnimatedSection from "@/components/AnimatedSection";
 import AboutStatsBand from "@/components/AboutStatsBand";
+import AnimatedSection from "@/components/AnimatedSection";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -41,7 +41,7 @@ const leaders = [
     initials: "SC",
   },
   {
-    name: "Elizabeth Jachim",
+    name: "Elizabeth Jachim, MSN, RN",
     title: "Chief Nursing Officer",
     initials: "EJ",
   },
@@ -101,10 +101,10 @@ export default function AboutPage() {
               <p className="mt-8 max-w-[620px] text-[1rem] leading-8 text-text-secondary sm:text-[1.0625rem]">
                 National Behavioral &amp; Psychiatric Health System (NBPHS)
                 develops and operates inpatient behavioral health facilities
-                dedicated to providing specialized psychiatric care for adults and
-                seniors. We were formed to help address a clear gap in behavioral
-                health care by developing facilities specifically structured for
-                this level of care.
+                dedicated to providing specialized psychiatric care for adults
+                and seniors. We were formed to help address a clear gap in
+                behavioral health care by developing facilities specifically
+                structured for this level of care.
               </p>
             </div>
           </AnimatedSection>
@@ -145,7 +145,10 @@ export default function AboutPage() {
         </div>
       </section>
       {/* Main Description */}
-      <section id="about-content" className="bg-white pt-12 pb-16 md:pt-16 md:pb-24">
+      <section
+        id="about-content"
+        className="bg-white pt-12 pb-16 md:pt-16 md:pb-24"
+      >
         <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
           <AnimatedSection>
             <div className="mx-auto flex max-w-[800px] flex-col gap-5">
@@ -153,15 +156,16 @@ export default function AboutPage() {
                 Our Purpose
               </span>
               <p className="text-[1.0625rem] leading-relaxed text-text-secondary">
-                Across the country, families and healthcare providers struggle to
-                find appropriate care for individuals experiencing serious
+                Across the country, families and healthcare providers struggle
+                to find appropriate care for individuals experiencing serious
                 behavioral health conditions. The shortage of inpatient
                 psychiatric capacity is particularly acute for older adults, who
                 often face both psychiatric and medical complexities.
               </p>
               <p className="text-[1.0625rem] leading-relaxed text-text-secondary">
-                NBPHS was formed to help address that gap by developing facilities
-                specifically structured to provide this level of care.
+                NBPHS was formed to help address that gap by developing
+                facilities specifically structured to provide this level of
+                care.
               </p>
               <p className="text-[1.0625rem] leading-relaxed text-text-secondary">
                 Our team has spent years working in healthcare systems where
@@ -202,27 +206,26 @@ export default function AboutPage() {
               </h2>
             </div>
             <p className="mx-auto mb-6 max-w-[700px] text-center text-[1.0625rem] leading-relaxed text-text-secondary">
-              National Behavioral &amp; Psychiatric Health System is led by a team
-              with extensive experience in healthcare development, behavioral
-              health operations, and hospital management.
+              National Behavioral &amp; Psychiatric Health System is led by a
+              team with extensive experience in healthcare development,
+              behavioral health operations, and hospital management.
             </p>
             <p className="mx-auto mb-14 max-w-[700px] text-center text-[0.9375rem] leading-relaxed text-text-secondary">
               Together, the NBPHS leadership team and its affiliated operational
-              partners bring decades of experience supporting the development and
-              operation of healthcare facilities across multiple markets.
+              partners bring decades of experience supporting the development
+              and operation of healthcare facilities across multiple markets.
             </p>
           </AnimatedSection>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {leaders.map((leader, index) => (
-              <AnimatedSection
-                key={leader.name}
-                delay={index * 0.08}
-              >
-                <div
-                  className="group relative overflow-hidden rounded-sm bg-white shadow-sm"
-                >
+              <AnimatedSection key={leader.name} delay={index * 0.08}>
+                <div className="group relative overflow-hidden rounded-sm bg-white shadow-sm">
                   <div
-                    className={`relative aspect-square bg-linear-to-br ${leaderCardBackgrounds[index % leaderCardBackgrounds.length]}`}
+                    className={`relative aspect-square bg-linear-to-br ${
+                      leaderCardBackgrounds[
+                        index % leaderCardBackgrounds.length
+                      ]
+                    }`}
                   >
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_28%,rgba(255,255,255,0.28),transparent_32%),linear-gradient(to_top,rgba(0,0,0,0.38),rgba(0,0,0,0.02))]" />
                     <div className="absolute inset-0 bg-black/10 transition-colors duration-300 md:group-hover:bg-black/35" />
@@ -267,15 +270,16 @@ export default function AboutPage() {
                 Why It Matters
               </h2>
               <p className="text-[1.0625rem] leading-relaxed text-text-secondary">
-                Behavioral health crises affect entire families. When appropriate
-                care is not available, patients are often treated in settings that
-                were never structured to meet their needs.
+                Behavioral health crises affect entire families. When
+                appropriate care is not available, patients are often treated in
+                settings that were never structured to meet their needs.
               </p>
               <p className="text-[1.0625rem] leading-relaxed text-text-secondary">
-                For seniors, the challenge can be even greater. Cognitive decline,
-                depression, medical illness, and psychiatric conditions often
-                occur together, yet the healthcare system rarely provides
-                environments structured to treat these needs in an integrated way.
+                For seniors, the challenge can be even greater. Cognitive
+                decline, depression, medical illness, and psychiatric conditions
+                often occur together, yet the healthcare system rarely provides
+                environments structured to treat these needs in an integrated
+                way.
               </p>
               <p className="text-[1.0625rem] leading-relaxed text-text-secondary">
                 We believe older adults deserve thoughtful, specialized care
@@ -300,8 +304,9 @@ export default function AboutPage() {
               </h2>
               <p className="text-[1.0625rem] leading-relaxed text-text-secondary">
                 NBPHS brings together healthcare development experience,
-                behavioral health operations, and clinical collaboration to create
-                facilities structured around the realities of psychiatric care.
+                behavioral health operations, and clinical collaboration to
+                create facilities structured around the realities of psychiatric
+                care.
               </p>
               <p className="text-[1.0625rem] font-semibold leading-relaxed text-primary">
                 Our work focuses on:
@@ -340,14 +345,14 @@ export default function AboutPage() {
               <p className="text-[1.0625rem] leading-relaxed text-text-secondary">
                 Behavioral health care requires patience, experience, and
                 consistency. Facilities must be structured carefully, staffed
-                thoughtfully, and operated with a clear understanding of the needs
-                of patients, families, and clinical teams.
+                thoughtfully, and operated with a clear understanding of the
+                needs of patients, families, and clinical teams.
               </p>
               <p className="text-[1.0625rem] leading-relaxed text-text-secondary">
-                NBPHS is building a network of behavioral health facilities with a
-                long-term perspective focused on providing care that communities
-                can rely on and environments where patients are treated with
-                respect.
+                NBPHS is building a network of behavioral health facilities with
+                a long-term perspective focused on providing care that
+                communities can rely on and environments where patients are
+                treated with respect.
               </p>
               <p className="text-[1.0625rem] leading-relaxed text-text-secondary">
                 Our goal is not simply to add capacity to the healthcare system,
@@ -428,7 +433,8 @@ export default function AboutPage() {
                 Continue Exploring
               </span>
               <h2 className="mt-4 text-[clamp(1.8rem,3.6vw,2.6rem)] font-bold leading-[1.15] tracking-tight text-text-primary">
-                Learn more about our facilities and how we expand access to care.
+                Learn more about our facilities and how we expand access to
+                care.
               </h2>
               <p className="mx-auto mt-4 max-w-[600px] text-[1rem] leading-relaxed text-text-secondary">
                 Explore our facilities or contact our team to learn more about

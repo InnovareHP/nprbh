@@ -21,8 +21,7 @@ interface HeroProps {
 }
 
 const sizeClasses = {
-  full:
-    "h-[calc(100dvh-8rem)] min-h-[22rem] px-0 py-2 sm:h-[calc(100dvh-10rem)] sm:min-h-[24rem] sm:py-3 md:py-4",
+  full: "h-[calc(100dvh-8rem)] min-h-[22rem] px-0 py-2 sm:h-[calc(100dvh-10rem)] sm:min-h-[24rem] sm:py-3 md:py-4",
   medium:
     "min-h-[460px] pt-24 pb-16 sm:min-h-[520px] sm:pt-28 sm:pb-20 md:min-h-[500px] md:pt-32 md:pb-20",
   small:
@@ -39,7 +38,8 @@ const stats = [
 function getMobileStatLabelLines(stat: { value: string; label: string }) {
   if (stat.value === "6") return ["Behavioral Health", "Facilities"];
   if (stat.value === "4") return ["States", "Served"];
-  if (stat.value === "Decades") return ["Healthcare Development", "& Operations Experience"];
+  if (stat.value === "Decades")
+    return ["Healthcare Development", "& Operations Experience"];
   if (stat.value === "Focused Care") return ["Adults", "& Seniors"];
   return [stat.label];
 }
@@ -80,11 +80,7 @@ function CountUpNumber({
   return <span>{count}</span>;
 }
 
-function ScrollCueButton({
-  scrollTargetId,
-}: {
-  scrollTargetId: string;
-}) {
+function ScrollCueButton({ scrollTargetId }: { scrollTargetId: string }) {
   return (
     <button
       type="button"
@@ -129,7 +125,7 @@ export default function Hero({
   children,
   size = "medium",
   align = "center",
-  image = "/hero-image-1.jpg",
+  image = "/hero-image-3.jpg",
   imageAlt = "",
   overlayClassName = "bg-black/45",
   imageClassName = "",
@@ -165,7 +161,7 @@ export default function Hero({
           src={image}
           alt={imageAlt}
           fill
-          priority={isFull}
+          priority
           className={`object-cover object-[center_58%] sm:object-[center_52%] md:object-center ${imageClassName}`}
           sizes="100vw"
         />
@@ -256,7 +252,10 @@ export default function Hero({
                           key={stat.label}
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
-                          transition={{ duration: 0.45, delay: 0.55 + i * 0.08 }}
+                          transition={{
+                            duration: 0.45,
+                            delay: 0.55 + i * 0.08,
+                          }}
                           className="grid grid-cols-[72px_1fr] items-center gap-4"
                         >
                           <span
@@ -302,7 +301,10 @@ export default function Hero({
                           key={stat.label}
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
-                          transition={{ duration: 0.45, delay: 0.55 + i * 0.08 }}
+                          transition={{
+                            duration: 0.45,
+                            delay: 0.55 + i * 0.08,
+                          }}
                           className="flex min-h-[86px] flex-col items-center justify-center px-3 py-3 text-center sm:min-h-[102px] sm:px-4 sm:py-4 lg:min-h-[114px] lg:px-5 lg:py-5"
                         >
                           <div className="grid w-full justify-items-center">
@@ -435,8 +437,8 @@ export default function Hero({
                         isFocusedCare
                           ? "text-2xl sm:text-4xl"
                           : isNumber
-                          ? "text-4xl sm:text-6xl"
-                          : "text-3xl sm:text-5xl"
+                            ? "text-4xl sm:text-6xl"
+                            : "text-3xl sm:text-5xl"
                       }`}
                     >
                       {isNumber ? (
