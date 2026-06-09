@@ -1,6 +1,6 @@
+import Link from "next/link";
 import AnimatedSection from "@/components/AnimatedSection";
 import Hero from "@/components/Hero";
-import Link from "next/link";
 import ContactForm from "./contact/ContactForm";
 
 export default function Home() {
@@ -86,14 +86,7 @@ export default function Home() {
                 Contact Our Team
               </h2>
               <p className="mx-auto mt-5 max-w-[620px] text-[0.98rem] leading-8 text-text-secondary">
-                For any inquiries, please email us at{" "}
-                <a
-                  href="mailto:info@nbphs.com"
-                  className="font-semibold text-primary underline-offset-4 hover:text-accent hover:underline"
-                >
-                  info@nbphs.com
-                </a>{" "}
-                or submit the contact form below.
+                For any inquiries, please submit the contact form below.
               </p>
             </div>
           </div>

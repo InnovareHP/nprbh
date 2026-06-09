@@ -1,13 +1,21 @@
+import Link from "next/link";
 import AboutStatsBand from "@/components/AboutStatsBand";
 import AnimatedSection from "@/components/AnimatedSection";
-import type { Metadata } from "next";
-import Link from "next/link";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "About",
   description:
     "Learn about National Behavioral & Psychiatric Health System — our mission, approach, and leadership in behavioral healthcare facility development and operations.",
-};
+  path: "/about",
+  keywords: [
+    "about NBPHS",
+    "behavioral health leadership",
+    "psychiatric care mission",
+    "behavioral health facility operators",
+  ],
+});
 
 const principles = [
   {
@@ -88,6 +96,12 @@ const overviewStats = [
 export default function AboutPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "About", path: "/about" },
+        ])}
+      />
       <section className="bg-white pt-16 pb-12 md:pt-20 md:pb-16">
         <div className="mx-auto max-w-[1200px] px-[5vw] sm:px-6">
           <AnimatedSection>

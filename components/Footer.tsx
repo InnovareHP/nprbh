@@ -1,4 +1,4 @@
-import { Linkedin, Mail } from "lucide-react";
+import { Linkedin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -74,13 +74,6 @@ export default function Footer() {
             <h4 className="mb-1 text-[0.8125rem] font-bold uppercase tracking-widest text-on-dark">
               Contact
             </h4>
-            <a
-              href="mailto:info@nbphs.com"
-              className="inline-flex items-center gap-2 text-[0.9375rem] text-on-dark-muted transition-colors hover:text-white"
-            >
-              <Mail className="h-4 w-4 shrink-0" />
-              info@nbphs.com
-            </a>
             <a
               href="https://www.linkedin.com/company/national-behavioral-psychiatric-health-system/"
               target="_blank"

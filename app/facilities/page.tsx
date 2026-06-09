@@ -1,14 +1,30 @@
-import AnimatedSection from "@/components/AnimatedSection";
-import Hero from "@/components/Hero";
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import AnimatedSection from "@/components/AnimatedSection";
+import Hero from "@/components/Hero";
+import JsonLd from "@/components/JsonLd";
+import {
+  absoluteUrl,
+  breadcrumbJsonLd,
+  pageMetadata,
+  SITE_URL,
+} from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Facilities",
   description:
     "NBPHS develops and operates behavioral health facilities dedicated to expanding access to specialized psychiatric care.",
-};
+  path: "/facilities",
+  keywords: [
+    "behavioral health facilities",
+    "psychiatric hospitals",
+    "Three Rivers Behavioral Health",
+    "Harmony Behavioral Health",
+    "Missions Behavioral Health",
+    "Magnolia Behavioral Health",
+    "Palm Grove Health Center",
+  ],
+});
 
 const facilities = [
   {
@@ -53,8 +69,35 @@ const facilities = [
 ];
 
 export default function FacilitiesPage() {
+  const facilitiesJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: facilities.map((facility, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "Hospital",
+        name: facility.name,
+        medicalSpecialty: "Psychiatric",
+        image: absoluteUrl(facility.image),
+        ...(facility.href !== "#" ? { url: facility.href } : {}),
+        ...(facility.mapUrl ? { hasMap: facility.mapUrl } : {}),
+        parentOrganization: { "@id": `${SITE_URL}/#organization` },
+      },
+    })),
+  };
+
   return (
     <>
+      <JsonLd
+        data={[
+          facilitiesJsonLd,
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Facilities", path: "/facilities" },
+          ]),
+        ]}
+      />
       <Hero
         size="small"
         align="center"
@@ -102,14 +145,14 @@ export default function FacilitiesPage() {
                   facility.image === "/facilities/logo-mbh.png"
                     ? "scale-90 p-3"
                     : facility.image === "/facilities/trbh-logo.png"
-                    ? "scale-[0.85] p-4"
-                    : facility.image === "/facilities/harmony-health-logo.png"
-                    ? "scale-[0.85] p-4"
-                    : facility.image === "/facilities/palm-grove-logo.png"
-                    ? "scale-150 p-3"
-                    : facility.image === "/facilities/magnolia-logo-3.png"
-                    ? "scale-110 p-3"
-                    : "scale-80 p-5";
+                      ? "scale-[0.85] p-4"
+                      : facility.image === "/facilities/harmony-health-logo.png"
+                        ? "scale-[0.85] p-4"
+                        : facility.image === "/facilities/palm-grove-logo.png"
+                          ? "scale-150 p-3"
+                          : facility.image === "/facilities/magnolia-logo-3.png"
+                            ? "scale-110 p-3"
+                            : "scale-80 p-5";
 
                 const imageBlock = (
                   <div className="relative h-full min-h-[140px] w-full max-w-[320px] transition-transform duration-300 group-hover:scale-[1.05]">

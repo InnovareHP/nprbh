@@ -1,18 +1,31 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import AnimatedSection from "@/components/AnimatedSection";
 import Hero from "@/components/Hero";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 import ContactForm from "./ContactForm";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Contact Us",
   description:
     "Contact National Behavioral & Psychiatric Health System for inquiries about our behavioral health facilities and development initiatives.",
-};
+  path: "/contact",
+  keywords: [
+    "contact NBPHS",
+    "behavioral health inquiries",
+    "psychiatric facility partnerships",
+  ],
+});
 
 export default function ContactPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Contact", path: "/contact" },
+        ])}
+      />
       <Hero
         size="small"
         align="center"
@@ -35,26 +48,10 @@ export default function ContactPage() {
                 </h2>
                 <p className="text-[1.0625rem] leading-relaxed text-text-secondary">
                   For general inquiries regarding NBPHS or our behavioral health
-                  facilities, please contact:
+                  facilities, please use the contact form or connect with us:
                 </p>
 
                 <div className="flex flex-col gap-6">
-                  <div className="flex items-start gap-4">
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent-bg text-xl">
-                      ✉
-                    </span>
-                    <div>
-                      <h3 className="mb-1 text-xs font-semibold uppercase tracking-widest text-text-light">
-                        Email
-                      </h3>
-                      <a
-                        href="mailto:info@nbphs.com"
-                        className="text-base font-medium text-primary transition-colors hover:text-accent"
-                      >
-                        info@nbphs.com
-                      </a>
-                    </div>
-                  </div>
                   <div className="flex items-start gap-4">
                     <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent-bg text-base font-semibold">
                       in

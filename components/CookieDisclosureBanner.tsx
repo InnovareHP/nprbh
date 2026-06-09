@@ -1,9 +1,8 @@
 "use client";
 
-import { registerCookie } from "@/app/action/register-cookie";
 import { Info, X } from "lucide-react";
-import Link from "next/link";
 import { useEffect, useState } from "react";
+import { registerCookie } from "@/app/action/register-cookie";
 
 interface CookieDisclosureBannerProps {
   hasAccepted: boolean;
@@ -117,17 +116,6 @@ export default function CookieDisclosureBanner({
                 Decline
               </button>
             </div>
-
-            <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 text-[0.875rem] text-white/65">
-              <Link
-                href="mailto:info@nbphs.com"
-                className="font-medium text-white/92 hover:text-white"
-              >
-                Email us
-              </Link>
-              <span className="hidden h-1 w-1 rounded-full bg-white/20 sm:inline-block" />
-              <span>info@nbphs.com</span>
-            </div>
           </div>
         </div>
       </div>
@@ -145,8 +133,8 @@ export default function CookieDisclosureBanner({
   const desktopPanelState = isDesktopClosing
     ? "translate-y-2 opacity-0"
     : isEntered
-    ? "translate-y-0 opacity-100"
-    : "translate-y-3 opacity-0";
+      ? "translate-y-0 opacity-100"
+      : "translate-y-3 opacity-0";
 
   return (
     <>

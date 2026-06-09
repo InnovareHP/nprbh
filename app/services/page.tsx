@@ -1,13 +1,27 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import AnimatedSection from "@/components/AnimatedSection";
 import Hero from "@/components/Hero";
+import JsonLd from "@/components/JsonLd";
+import {
+  absoluteUrl,
+  breadcrumbJsonLd,
+  pageMetadata,
+  SITE_URL,
+} from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Services",
   description:
     "NBPHS provides behavioral health facility development, operations management, and specialized senior behavioral health programs.",
-};
+  path: "/services",
+  keywords: [
+    "behavioral health facility development",
+    "behavioral health operations management",
+    "senior behavioral health programs",
+    "geriatric psychiatry services",
+    "psychiatric facility management",
+  ],
+});
 
 const services = [
   {
@@ -58,8 +72,33 @@ const services = [
 ];
 
 export default function ServicesPage() {
+  const servicesJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: services.map((service, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "MedicalProcedure",
+        name: service.title,
+        description: service.description,
+        url: `${absoluteUrl("/services")}#${service.id}`,
+        provider: { "@id": `${SITE_URL}/#organization` },
+      },
+    })),
+  };
+
   return (
     <>
+      <JsonLd
+        data={[
+          servicesJsonLd,
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/services" },
+          ]),
+        ]}
+      />
       <Hero
         size="small"
         align="center"
