@@ -24,7 +24,6 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `app/page.tsx` — Home page
 - `app/about/page.tsx` — About / Mission / Leadership
 - `app/services/page.tsx` — Service offerings
-- `app/gallery/page.tsx` — Facility gallery (placeholder images)
 - `app/contact/page.tsx` — Contact form + info (form is a client component in `ContactForm.tsx`)
 - `components/` — Shared components: `Header.tsx` (client), `Footer.tsx`, `Hero.tsx`
 - Path alias `@/*` maps to project root
