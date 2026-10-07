@@ -10,6 +10,7 @@
     "format": "biome format --write"
   },
   "dependencies": {
+    "@aws-sdk/client-sesv2": "^3.1147.0",
     "@tailwindcss/postcss": "^4.2.1",
     "framer-motion": "^12.38.0",
     "lucide-react": "^0.577.0",

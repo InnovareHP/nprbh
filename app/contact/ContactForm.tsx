@@ -1,21 +1,84 @@
 "use client";
 
-import { type FormEvent, useState } from "react";
+import { type FormEvent, useEffect, useRef, useState } from "react";
 
 interface ContactFormProps {
   variant?: "default" | "homeMinimal";
 }
 
-export default function ContactForm({
-  variant = "default",
-}: ContactFormProps) {
+export default function ContactForm({ variant = "default" }: ContactFormProps) {
   const [submitted, setSubmitted] = useState(false);
   const isHomeMinimal = variant === "homeMinimal";
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const startedAt = useRef(0);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  useEffect(() => {
+    if (!submitted) startedAt.current = Date.now();
+  }, [submitted]);
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    const form = e.currentTarget;
+    setSending(true);
+    setError(null);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...Object.fromEntries(new FormData(form)),
+          startedAt: startedAt.current,
+        }),
+      });
+      if (res.status === 429) {
+        throw new Error(
+          "Too many submissions. Please wait a minute and try again.",
+        );
+      }
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        throw new Error(json.error ?? "Something went wrong.");
+      }
+      form.reset();
+      setSubmitted(true);
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again.",
+      );
+    } finally {
+      setSending(false);
+    }
   }
+
+  // Honeypot — hidden from humans, bots tend to fill it
+  const honeypot = (
+    <div
+      aria-hidden="true"
+      className="absolute -left-[10000px] h-px w-px overflow-hidden"
+    >
+      <label htmlFor="website">Website</label>
+      <input
+        type="text"
+        id="website"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+      />
+    </div>
+  );
+
+  const errorAlert = error && (
+    <p
+      role="alert"
+      className="rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"
+    >
+      {error}
+    </p>
+  );
 
   if (submitted) {
     return (
@@ -76,6 +139,7 @@ export default function ContactForm({
         onSubmit={handleSubmit}
         className="mx-auto flex w-full max-w-[760px] flex-col gap-7"
       >
+        {honeypot}
         <input
           type="text"
           id="name"
@@ -106,11 +170,13 @@ export default function ContactForm({
           className={inputClassName}
           placeholder="Purpose"
         />
+        {errorAlert}
         <button
           type="submit"
-          className="mt-3 w-full cursor-pointer rounded-sm bg-primary px-8 py-3.5 text-[0.85rem] font-medium uppercase tracking-[0.14em] text-white transition-colors hover:bg-primary-hover"
+          disabled={sending}
+          className="mt-3 w-full cursor-pointer rounded-sm bg-primary px-8 py-3.5 text-[0.85rem] font-medium uppercase tracking-[0.14em] text-white transition-colors hover:bg-primary-hover disabled:pointer-events-none disabled:opacity-60"
         >
-          Submit
+          {sending ? "Sending..." : "Submit"}
         </button>
       </form>
     );
@@ -119,6 +185,8 @@ export default function ContactForm({
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-5">
       <h2 className="mb-1 text-xl font-bold text-primary">Send Us a Message</h2>
+
+      {honeypot}
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div className="flex flex-col gap-1.5">
@@ -226,11 +294,14 @@ export default function ContactForm({
         />
       </div>
 
+      {errorAlert}
+
       <button
         type="submit"
-        className="mt-2 w-full rounded-md border-2 border-accent bg-accent px-10 py-[18px] text-base font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-accent-hover hover:bg-accent-hover hover:shadow-md"
+        disabled={sending}
+        className="mt-2 w-full rounded-md border-2 border-accent bg-accent px-10 py-[18px] text-base font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-accent-hover hover:bg-accent-hover hover:shadow-md disabled:pointer-events-none disabled:opacity-60"
       >
-        Send Message
+        {sending ? "Sending..." : "Send Message"}
       </button>
     </form>
   );
