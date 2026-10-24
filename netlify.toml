@@ -1,0 +1,15 @@
+[build.environment]
+  NODE_VERSION = "24"
+
+# Rate limit the contact form endpoint — each submission sends SES email.
+# Pass-through rule: requests are served normally until the limit is hit,
+# then Netlify answers with HTTP 429 at the edge.
+[[redirects]]
+  from = "/api/contact"
+  to = "/api/contact"
+
+  [redirects.rate_limit]
+    # 5 requests per IP per minute
+    window_limit = 5
+    window_size = 60
+    aggregate_by = ["ip", "domain"]
