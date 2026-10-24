@@ -33,7 +33,7 @@ export default function CookieDisclosureBanner({
     }
 
     setIsChecked(true);
-  }, []);
+  }, [hasAccepted]);
 
   function closeMobileBanner() {
     setIsMobileClosing(true);
@@ -103,6 +103,7 @@ export default function CookieDisclosureBanner({
 
             <div className="mt-4 flex gap-2">
               <button
+                type="button"
                 onClick={handleAccept}
                 className="rounded-lg bg-white px-4 py-2 text-sm font-medium text-black hover:opacity-90"
               >
@@ -110,6 +111,7 @@ export default function CookieDisclosureBanner({
               </button>
 
               <button
+                type="button"
                 onClick={onClose}
                 className="rounded-lg border border-white/20 px-4 py-2 text-sm text-white/80 hover:bg-white/10"
               >
@@ -142,6 +144,7 @@ export default function CookieDisclosureBanner({
       {isMobileVisible && (
         <div className="fixed bottom-4 right-4 z-60 sm:hidden">
           <button
+            type="button"
             onClick={openMobileBanner}
             className={`inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 text-white shadow transition ${
               isMobileOpen ? "opacity-0 scale-95" : "opacity-100"
