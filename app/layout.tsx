@@ -3,7 +3,6 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -48,6 +47,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="overflow-x-hidden">
+      <head>
+        {/* Google tag (gtag.js) */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-VK2W8FC1BD"
+        />
+        <script
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: static Google Analytics snippet, no user input
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-VK2W8FC1BD');`,
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} overflow-x-hidden`}
       >
@@ -55,19 +70,6 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <CookieDisclosureBanner />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-VK2W8FC1BD"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-VK2W8FC1BD');
-          `}
-        </Script>
       </body>
     </html>
   );
