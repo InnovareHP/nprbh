@@ -86,6 +86,22 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className="overflow-x-hidden">
+      <head>
+        {/* Google tag (gtag.js) */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-MVQG22CNKQ"
+        />
+        <script
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: static Google Analytics snippet, no user input
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-MVQG22CNKQ');`,
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} overflow-x-hidden`}
       >
