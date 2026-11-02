@@ -51,7 +51,7 @@ export default function RootLayout({
         {/* Google tag (gtag.js) */}
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-VK2W8FC1BD"
+          src="https://www.googletagmanager.com/gtag/js?id=G-MVQG22CNKQ"
         />
         <script
           // biome-ignore lint/security/noDangerouslySetInnerHtml: static Google Analytics snippet, no user input
@@ -59,7 +59,7 @@ export default function RootLayout({
             __html: `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-VK2W8FC1BD');`,
+gtag('config', 'G-MVQG22CNKQ');`,
           }}
         />
       </head>
