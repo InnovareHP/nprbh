@@ -36,7 +36,7 @@ export function textToHtml(value: string): string {
 }
 
 function siteUrl(): string {
-  return (process.env.SITE_URL ?? "https://www.nbphs.com").replace(/\/$/, "");
+  return (process.env.SITE_URL ?? "https://nbphsystem.com").replace(/\/$/, "");
 }
 
 /** Highlighted message panel. Table-based so Outlook keeps padding and border. */

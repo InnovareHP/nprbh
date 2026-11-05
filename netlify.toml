@@ -7,6 +7,10 @@
 [[redirects]]
   from = "/api/contact"
   to = "/api/contact"
+  # 200 = rewrite (pass-through). Without it Netlify defaults to a 301 back to
+  # the same URL, which loops and burns the rate limit -> 429 on every submit.
+  status = 200
+  force = true
 
   [redirects.rate_limit]
     # 5 requests per IP per minute
