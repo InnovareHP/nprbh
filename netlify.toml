@@ -1,5 +1,5 @@
 [build.environment]
-  NODE_VERSION = "24"
+  NODE_VERSION = "24.22.3"
 
 # Rate limit the contact form endpoint — each submission sends SES email.
 # Pass-through rule: requests are served normally until the limit is hit,
